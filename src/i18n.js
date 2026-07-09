@@ -29,7 +29,10 @@ export const translations = {
         "Chaque œuvre naît d’un souvenir, d’une lumière aperçue ailleurs, d’un paysage qui reste dans le cœur longtemps après le retour. À travers ses voyages, l’artiste recueille des fragments de nature, de silence, de couleurs et d’émotions. La faune, la flore, les horizons lointains et les instants suspendus deviennent alors des tableaux uniques, pensés comme des invitations à ressentir plutôt qu’à simplement regarder.",
       discover: "Découvrir la collection",
       privateRequest: "Demande privée",
-      uniquePiece: "Pièce unique"
+      uniquePiece: "Pièce unique",
+      viewArtwork: "Voir cette œuvre",
+      carouselLabel: "Œuvre mise en avant",
+      chooseSlide: "Afficher l'œuvre"
     },
     collection: {
       eyebrow: "Collection confidentielle",
@@ -145,7 +148,10 @@ export const translations = {
         "Each work begins with a memory, a light glimpsed elsewhere, a landscape that stays in the heart long after returning. Through her travels, the artist gathers fragments of nature, silence, color and emotion. Wildlife, flora, distant horizons and suspended moments become unique paintings, created as invitations to feel rather than simply look.",
       discover: "Discover the collection",
       privateRequest: "Private inquiry",
-      uniquePiece: "Unique piece"
+      uniquePiece: "Unique piece",
+      viewArtwork: "View this work",
+      carouselLabel: "Featured artwork",
+      chooseSlide: "Show artwork"
     },
     collection: {
       eyebrow: "Confidential collection",
@@ -261,7 +267,10 @@ export const translations = {
         "Jedes Werk entsteht aus einer Erinnerung, aus einem Licht, das anderswo gesehen wurde, aus einer Landschaft, die lange nach der Rückkehr im Herzen bleibt. Auf ihren Reisen sammelt die Künstlerin Fragmente von Natur, Stille, Farben und Emotionen. Fauna, Flora, ferne Horizonte und schwebende Augenblicke werden zu einzigartigen Gemälden, gedacht als Einladung zum Fühlen und nicht nur zum Betrachten.",
       discover: "Kollektion entdecken",
       privateRequest: "Private Anfrage",
-      uniquePiece: "Einzelstück"
+      uniquePiece: "Einzelstück",
+      viewArtwork: "Dieses Werk ansehen",
+      carouselLabel: "Hervorgehobenes Werk",
+      chooseSlide: "Werk anzeigen"
     },
     collection: {
       eyebrow: "Vertrauliche Kollektion",

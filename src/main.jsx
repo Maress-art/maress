@@ -35,7 +35,7 @@ function App() {
   const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
   const text = translations[language];
 
-  const heroArtworks = artworks;
+  const heroArtworks = artworks.filter((artwork) => artwork.image);
   const featuredArtwork = heroArtworks[heroArtworkIndex] ?? heroArtworks[0];
   const featuredArtworkIsSold = featuredArtwork?.status === "Vendu";
 
@@ -98,6 +98,10 @@ function App() {
 
   function openArtwork(artwork) {
     setSelectedArtwork(artwork);
+  }
+
+  function selectHeroArtwork(index) {
+    setHeroArtworkIndex(index);
   }
 
   function navTo(section) {
@@ -184,20 +188,37 @@ function App() {
               </button>
             </div>
           </div>
-          <button className="hero-artwork" type="button" onClick={() => openArtwork(featuredArtwork)}>
-            <div className="hero-artwork-frame" key={featuredArtwork.id}>
-              <ArtworkVisual artwork={translatedFeaturedArtwork} labels={text} variant="hero" />
+          <div className="hero-showcase" aria-label={text.hero.carouselLabel}>
+            <button className="hero-artwork" type="button" onClick={() => openArtwork(featuredArtwork)}>
+              <div className="hero-artwork-frame" key={featuredArtwork.id}>
+                <ArtworkVisual artwork={translatedFeaturedArtwork} labels={text} variant="hero" />
+              </div>
+              <span className="hero-artwork-caption">
+                <b>{translatedFeaturedArtwork.name}</b>
+                <small>{text.hero.uniquePiece}</small>
+              </span>
+              <span className="hero-view-link">
+                {text.hero.viewArtwork} <ArrowUpRight size={14} />
+              </span>
+            </button>
+            <div className="hero-carousel-meta">
+              <span className="hero-carousel-count">
+                {String(heroArtworkIndex + 1).padStart(2, "0")} / {String(heroArtworks.length).padStart(2, "0")}
+              </span>
+              <div className="hero-carousel-dots" aria-label={text.hero.carouselLabel}>
+                {heroArtworks.map((artwork, index) => (
+                  <button
+                    className={index === heroArtworkIndex ? "active" : ""}
+                    type="button"
+                    aria-label={`${text.hero.chooseSlide} ${artwork.name}`}
+                    aria-pressed={index === heroArtworkIndex}
+                    key={artwork.id}
+                    onClick={() => selectHeroArtwork(index)}
+                  />
+                ))}
+              </div>
             </div>
-            <span>
-              <b>{translatedFeaturedArtwork.name}</b>
-              <small>{text.hero.uniquePiece}</small>
-            </span>
-            <div className="hero-carousel-dots" aria-hidden="true">
-              {heroArtworks.map((artwork, index) => (
-                <i className={index === heroArtworkIndex ? "active" : ""} key={artwork.id} />
-              ))}
-            </div>
-          </button>
+          </div>
         </section>
 
         <section className="collection-section" id="collection">

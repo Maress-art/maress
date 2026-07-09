@@ -263,24 +263,32 @@ p {
   cursor: not-allowed;
 }
 
-.hero-artwork {
+.hero-showcase {
   position: relative;
   width: min(100%, 560px);
   justify-self: end;
+}
+
+.hero-artwork {
+  position: relative;
+  display: block;
+  width: 100%;
   border: 0;
   padding: 0;
   background: transparent;
   cursor: pointer;
   box-shadow: var(--shadow);
-  transition: transform 220ms ease;
+  overflow: hidden;
+  transition: transform 260ms ease, box-shadow 260ms ease;
 }
 
 .hero-artwork:hover {
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 30px 86px rgba(53, 43, 31, 0.2);
 }
 
 .hero-artwork-frame {
-  animation: carouselFade 720ms ease both;
+  animation: carouselFade 900ms ease both;
 }
 
 .hero-artwork img,
@@ -290,7 +298,16 @@ p {
   object-fit: cover;
 }
 
-.hero-artwork span {
+.hero-artwork img {
+  transition: transform 1200ms ease, filter 1200ms ease;
+}
+
+.hero-artwork:hover img {
+  transform: scale(1.025);
+  filter: saturate(0.96) contrast(1.02);
+}
+
+.hero-artwork-caption {
   position: absolute;
   right: 18px;
   bottom: 18px;
@@ -303,35 +320,79 @@ p {
   text-align: left;
 }
 
-.hero-artwork b {
+.hero-artwork-caption b {
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 1.35rem;
   font-weight: 500;
 }
 
-.hero-artwork small {
+.hero-artwork-caption small {
   color: var(--muted);
 }
 
-.hero-carousel-dots {
+.hero-view-link {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 13px;
+  background: rgba(29, 27, 24, 0.78);
+  color: var(--paper);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.hero-artwork:hover .hero-view-link {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero-carousel-meta {
   position: absolute;
   left: 18px;
   bottom: 18px;
-  display: inline-flex;
-  gap: 7px;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: calc(100% - 238px);
+  padding: 10px 12px;
   background: rgba(251, 248, 241, 0.74);
   backdrop-filter: blur(14px);
 }
 
-.hero-carousel-dots i {
-  width: 7px;
-  height: 7px;
-  border: 1px solid rgba(29, 27, 24, 0.42);
-  border-radius: 999px;
+.hero-carousel-count {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
 }
 
-.hero-carousel-dots i.active {
+.hero-carousel-dots {
+  display: inline-flex;
+  gap: 7px;
+}
+
+.hero-carousel-dots button {
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(29, 27, 24, 0.42);
+  border-radius: 999px;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: width 180ms ease, background 180ms ease, border-color 180ms ease;
+}
+
+.hero-carousel-dots button.active {
+  width: 22px;
   background: var(--ink);
   border-color: var(--ink);
 }
@@ -750,20 +811,28 @@ footer span:first-child {
     padding-top: 54px;
   }
 
-  .hero-artwork {
+  .hero-showcase {
     justify-self: start;
     width: min(100%, 460px);
   }
 
-  .hero-artwork span {
+  .hero-artwork-caption {
     right: 12px;
     bottom: 12px;
     min-width: 0;
   }
 
-  .hero-carousel-dots {
+  .hero-carousel-meta {
     left: 12px;
     bottom: 12px;
+    max-width: calc(100% - 190px);
+    gap: 8px;
+    padding: 8px 10px;
+  }
+
+  .hero-view-link {
+    top: 12px;
+    right: 12px;
   }
 
   .art-grid,
