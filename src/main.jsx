@@ -70,15 +70,9 @@ function App() {
     try {
       const response = await fetch(formEndpoint, {
         method: "POST",
-        headers: {
-          Accept: "application/json"
-        },
+        mode: "no-cors",
         body: formData
       });
-
-      if (!response.ok) {
-        throw new Error("Form submission failed");
-      }
 
       event.currentTarget.reset();
       setRequestedArtwork("");
