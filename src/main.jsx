@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { ArrowUpRight, Check, Feather, Mail, Menu, X } from "lucide-react";
 import { artworks } from "./artworks";
@@ -31,19 +31,31 @@ function App() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("idle");
   const [submitMessage, setSubmitMessage] = useState("");
+  const [heroArtworkIndex, setHeroArtworkIndex] = useState(0);
   const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
   const text = translations[language];
 
-  const featuredArtwork = useMemo(
-    () => artworks.find((artwork) => artwork.status === "Disponible") ?? artworks[0],
-    []
-  );
+  const heroArtworks = artworks;
+  const featuredArtwork = heroArtworks[heroArtworkIndex] ?? heroArtworks[0];
+  const featuredArtworkIsSold = featuredArtwork?.status === "Vendu";
 
   useEffect(() => {
     document.documentElement.lang = language;
     document.title = "Maress | Galerie d'art privée";
     document.querySelector('meta[name="description"]')?.setAttribute("content", text.metaDescription);
   }, [language, text.metaDescription]);
+
+  useEffect(() => {
+    if (heroArtworks.length < 2) {
+      return undefined;
+    }
+
+    const timer = window.setInterval(() => {
+      setHeroArtworkIndex((currentIndex) => (currentIndex + 1) % heroArtworks.length);
+    }, 5000);
+
+    return () => window.clearInterval(timer);
+  }, [heroArtworks.length]);
 
   function translateArtwork(artwork) {
     const translatedArtwork = text.artworks[artwork.id] ?? {};
@@ -163,17 +175,28 @@ function App() {
               <button className="primary-button" onClick={() => navTo("#collection")}>
                 {text.hero.discover} <ArrowUpRight size={16} />
               </button>
-              <button className="quiet-button" onClick={() => requestArtwork(featuredArtwork.name)}>
-                {text.hero.privateRequest} <Mail size={15} />
+              <button
+                className="quiet-button"
+                disabled={featuredArtworkIsSold}
+                onClick={() => requestArtwork(featuredArtwork.name)}
+              >
+                {featuredArtworkIsSold ? text.collection.soldButton : text.hero.privateRequest} <Mail size={15} />
               </button>
             </div>
           </div>
           <button className="hero-artwork" type="button" onClick={() => openArtwork(featuredArtwork)}>
-            <ArtworkVisual artwork={translatedFeaturedArtwork} labels={text} variant="hero" />
+            <div className="hero-artwork-frame" key={featuredArtwork.id}>
+              <ArtworkVisual artwork={translatedFeaturedArtwork} labels={text} variant="hero" />
+            </div>
             <span>
               <b>{translatedFeaturedArtwork.name}</b>
               <small>{text.hero.uniquePiece}</small>
             </span>
+            <div className="hero-carousel-dots" aria-hidden="true">
+              {heroArtworks.map((artwork, index) => (
+                <i className={index === heroArtworkIndex ? "active" : ""} key={artwork.id} />
+              ))}
+            </div>
           </button>
         </section>
 

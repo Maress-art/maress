@@ -257,6 +257,12 @@ p {
   border-bottom: 1px solid var(--ink);
 }
 
+.quiet-button:disabled {
+  color: rgba(29, 27, 24, 0.42);
+  border-color: rgba(29, 27, 24, 0.18);
+  cursor: not-allowed;
+}
+
 .hero-artwork {
   position: relative;
   width: min(100%, 560px);
@@ -271,6 +277,10 @@ p {
 
 .hero-artwork:hover {
   transform: translateY(-5px);
+}
+
+.hero-artwork-frame {
+  animation: carouselFade 720ms ease both;
 }
 
 .hero-artwork img,
@@ -301,6 +311,29 @@ p {
 
 .hero-artwork small {
   color: var(--muted);
+}
+
+.hero-carousel-dots {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  display: inline-flex;
+  gap: 7px;
+  padding: 10px;
+  background: rgba(251, 248, 241, 0.74);
+  backdrop-filter: blur(14px);
+}
+
+.hero-carousel-dots i {
+  width: 7px;
+  height: 7px;
+  border: 1px solid rgba(29, 27, 24, 0.42);
+  border-radius: 999px;
+}
+
+.hero-carousel-dots i.active {
+  background: var(--ink);
+  border-color: var(--ink);
 }
 
 .collection-section,
@@ -645,6 +678,17 @@ footer span:first-child {
   }
 }
 
+@keyframes carouselFade {
+  from {
+    opacity: 0;
+    transform: scale(1.012);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 @media (max-width: 1120px) {
   .art-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -715,6 +759,11 @@ footer span:first-child {
     right: 12px;
     bottom: 12px;
     min-width: 0;
+  }
+
+  .hero-carousel-dots {
+    left: 12px;
+    bottom: 12px;
   }
 
   .art-grid,
