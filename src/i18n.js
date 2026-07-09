@@ -34,6 +34,26 @@ export const translations = {
       carouselLabel: "Œuvre mise en avant",
       chooseSlide: "Afficher l'œuvre"
     },
+    journey: {
+      eyebrow: "Le voyage derrière les œuvres",
+      title: "Avant la toile, il y a un lieu, une émotion, une lumière.",
+      text:
+        "Chaque création Maress prolonge une expérience vécue ailleurs. Le voyage ouvre le regard, l'émotion choisit ce qui restera, puis la peinture transforme ce fragment intime en pièce unique.",
+      steps: [
+        {
+          title: "Voyager",
+          text: "Marcher, observer, recueillir les paysages, les matières et les présences qui déplacent le regard."
+        },
+        {
+          title: "Ressentir",
+          text: "Laisser une couleur, une lumière ou un silence trouver sa place dans la mémoire."
+        },
+        {
+          title: "Peindre",
+          text: "Faire naître une œuvre unique, destinée à poursuivre son chemin dans un autre intérieur."
+        }
+      ]
+    },
     collection: {
       eyebrow: "Collection confidentielle",
       title: "Tableaux disponibles uniquement sur demande",
@@ -165,6 +185,26 @@ export const translations = {
       carouselLabel: "Featured artwork",
       chooseSlide: "Show artwork"
     },
+    journey: {
+      eyebrow: "The journey behind the works",
+      title: "Before the canvas, there is a place, an emotion, a light.",
+      text:
+        "Each Maress creation extends an experience lived elsewhere. Travel opens the gaze, emotion chooses what will remain, then painting transforms that intimate fragment into a unique piece.",
+      steps: [
+        {
+          title: "Travel",
+          text: "Walk, observe, gather landscapes, textures and presences that shift the way of seeing."
+        },
+        {
+          title: "Feel",
+          text: "Let a color, a light or a silence find its place in memory."
+        },
+        {
+          title: "Paint",
+          text: "Bring a unique work into being, destined to continue its path in another interior."
+        }
+      ]
+    },
     collection: {
       eyebrow: "Confidential collection",
       title: "Paintings available by private inquiry only",
@@ -295,6 +335,26 @@ export const translations = {
       viewArtwork: "Dieses Werk ansehen",
       carouselLabel: "Hervorgehobenes Werk",
       chooseSlide: "Werk anzeigen"
+    },
+    journey: {
+      eyebrow: "Die Reise hinter den Werken",
+      title: "Vor der Leinwand gibt es einen Ort, eine Emotion, ein Licht.",
+      text:
+        "Jede Maress-Kreation verlängert eine Erfahrung, die anderswo erlebt wurde. Die Reise öffnet den Blick, die Emotion wählt, was bleibt, und die Malerei verwandelt dieses intime Fragment in ein Einzelstück.",
+      steps: [
+        {
+          title: "Reisen",
+          text: "Gehen, beobachten, Landschaften, Materialien und Präsenzen sammeln, die den Blick verändern."
+        },
+        {
+          title: "Fühlen",
+          text: "Eine Farbe, ein Licht oder eine Stille ihren Platz in der Erinnerung finden lassen."
+        },
+        {
+          title: "Malen",
+          text: "Ein einzigartiges Werk entstehen lassen, bestimmt dafür, seinen Weg in einem anderen Raum fortzusetzen."
+        }
+      ]
     },
     collection: {
       eyebrow: "Vertrauliche Kollektion",

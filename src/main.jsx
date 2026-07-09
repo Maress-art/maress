@@ -274,6 +274,23 @@ function App() {
           </div>
         </section>
 
+        <section className="journey-section" aria-labelledby="journey-title">
+          <div className="journey-intro">
+            <p className="eyebrow">{text.journey.eyebrow}</p>
+            <h2 id="journey-title">{text.journey.title}</h2>
+            <p>{text.journey.text}</p>
+          </div>
+          <div className="journey-steps">
+            {text.journey.steps.map((step, index) => (
+              <article className="journey-step" key={step.title}>
+                <span>{String(index + 1).padStart(2, "0")}</span>
+                <h3>{step.title}</h3>
+                <p>{step.text}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
         <section className="collection-section" id="collection">
           <div className="collection-top">
             <div className="section-heading">
