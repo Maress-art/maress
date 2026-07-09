@@ -120,7 +120,8 @@ function App() {
     <>
       <header className="site-header">
         <a className="brand" href="#accueil" onClick={(event) => event.preventDefault()}>
-          Maress
+          <span>Maress</span>
+          <small>{text.brandLine}</small>
         </a>
         <nav className={menuOpen ? "nav open" : "nav"} aria-label={text.aria.mainNavigation}>
           <button onClick={() => navTo("#accueil")}>{text.nav.home}</button>

@@ -14,6 +14,7 @@ export const translations = {
       about: "À propos",
       contact: "Contact"
     },
+    brandLine: "Galerie d'art privée",
     aria: {
       mainNavigation: "Navigation principale",
       openMenu: "Ouvrir le menu",
@@ -129,6 +130,7 @@ export const translations = {
       about: "About",
       contact: "Contact"
     },
+    brandLine: "Private art gallery",
     aria: {
       mainNavigation: "Main navigation",
       openMenu: "Open menu",
@@ -244,6 +246,7 @@ export const translations = {
       about: "Über",
       contact: "Kontakt"
     },
+    brandLine: "Private Kunstgalerie",
     aria: {
       mainNavigation: "Hauptnavigation",
       openMenu: "Menü öffnen",
