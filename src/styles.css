@@ -98,6 +98,29 @@ img {
   background: rgba(29, 27, 24, 0.045);
 }
 
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 10px;
+  border: 1px solid var(--line);
+  padding: 3px;
+  background: rgba(251, 248, 241, 0.58);
+}
+
+.language-switcher button {
+  min-width: 38px;
+  min-height: 34px;
+  padding: 0 9px;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.language-switcher button.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
 .icon-button {
   display: inline-grid;
   place-items: center;
@@ -637,6 +660,11 @@ footer span:first-child {
   .nav button {
     justify-content: start;
     text-align: left;
+  }
+
+  .language-switcher {
+    margin-left: 0;
+    justify-self: start;
   }
 
   .hero {

@@ -1,7 +1,8 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { ArrowUpRight, Check, Feather, Mail, Menu, X } from "lucide-react";
 import { artworks } from "./artworks";
+import { languages, translations } from "./i18n";
 import "./styles.css";
 
 const statusClass = {
@@ -10,31 +11,72 @@ const statusClass = {
   Vendu: "sold"
 };
 
-function ArtworkVisual({ artwork, variant = "card" }) {
+function ArtworkVisual({ artwork, labels, variant = "card" }) {
   if (artwork.image) {
     return <img src={artwork.image} alt={artwork.name} />;
   }
 
   return (
     <div className={`art-placeholder ${variant}`} aria-label={`Image à venir pour ${artwork.name}`}>
-      <span>Image à venir</span>
+      <span>{labels.collection.imageComing}</span>
       <b>{artwork.name}</b>
     </div>
   );
 }
 
 function App() {
+  const [language, setLanguage] = useState("fr");
   const [selectedArtwork, setSelectedArtwork] = useState(null);
   const [requestedArtwork, setRequestedArtwork] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitStatus, setSubmitStatus] = useState("idle");
   const [submitMessage, setSubmitMessage] = useState("");
   const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
+  const text = translations[language];
 
   const featuredArtwork = useMemo(
     () => artworks.find((artwork) => artwork.status === "Disponible") ?? artworks[0],
     []
   );
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+    document.title = "Maress | Galerie d'art privée";
+    document.querySelector('meta[name="description"]')?.setAttribute("content", text.metaDescription);
+  }, [language, text.metaDescription]);
+
+  function translateArtwork(artwork) {
+    const translatedArtwork = text.artworks[artwork.id] ?? {};
+    return {
+      ...artwork,
+      shortDescription: translatedArtwork.shortDescription ?? artwork.shortDescription,
+      technique: translatedArtwork.technique ?? translateValue(artwork.technique),
+      price: translateValue(artwork.price),
+      dimensions: translateValue(artwork.dimensions),
+      detail: translatedArtwork.detail ?? artwork.detail
+    };
+  }
+
+  function translateValue(value) {
+    if (value === "Prix sur demande") {
+      return text.values.requestPrice;
+    }
+
+    if (value === "À préciser") {
+      return text.values.toSpecify;
+    }
+
+    return value;
+  }
+
+  function translateStatus(status) {
+    return text.statuses[status] ?? status;
+  }
+
+  function changeLanguage(nextLanguage) {
+    setLanguage(nextLanguage);
+    setMenuOpen(false);
+  }
 
   function requestArtwork(artworkName) {
     setRequestedArtwork(artworkName);
@@ -56,13 +98,13 @@ function App() {
 
     if (!formEndpoint) {
       setSubmitStatus("error");
-      setSubmitMessage("Le formulaire doit encore être relié à Formspree avant de pouvoir envoyer une demande.");
+      setSubmitMessage(text.contact.missingEndpoint);
       return;
     }
 
     const formData = new FormData(event.currentTarget);
-    const artworkName = formData.get("artwork") || "Œuvre non précisée";
-    formData.append("_subject", `Demande privée Maress - ${artworkName}`);
+    const artworkName = formData.get("artwork") || text.contact.unspecifiedArtwork;
+    formData.append("_subject", `${text.contact.subject} - ${artworkName}`);
 
     setSubmitStatus("sending");
     setSubmitMessage("");
@@ -77,12 +119,15 @@ function App() {
       event.currentTarget.reset();
       setRequestedArtwork("");
       setSubmitStatus("success");
-      setSubmitMessage("Votre demande a bien été envoyée. Une réponse personnelle vous sera adressée prochainement.");
+      setSubmitMessage(text.contact.success);
     } catch {
       setSubmitStatus("error");
-      setSubmitMessage("L'envoi n'a pas abouti. Merci de réessayer dans un instant.");
+      setSubmitMessage(text.contact.error);
     }
   }
+
+  const translatedFeaturedArtwork = translateArtwork(featuredArtwork);
+  const translatedSelectedArtwork = selectedArtwork ? translateArtwork(selectedArtwork) : null;
 
   return (
     <>
@@ -90,16 +135,30 @@ function App() {
         <a className="brand" href="#accueil" onClick={(event) => event.preventDefault()}>
           Maress
         </a>
-        <nav className={menuOpen ? "nav open" : "nav"} aria-label="Navigation principale">
-          <button onClick={() => navTo("#accueil")}>Accueil</button>
-          <button onClick={() => navTo("#collection")}>Collection</button>
-          <button onClick={() => navTo("#apropos")}>À propos</button>
-          <button onClick={() => navTo("#contact")}>Contact</button>
+        <nav className={menuOpen ? "nav open" : "nav"} aria-label={text.aria.mainNavigation}>
+          <button onClick={() => navTo("#accueil")}>{text.nav.home}</button>
+          <button onClick={() => navTo("#collection")}>{text.nav.collection}</button>
+          <button onClick={() => navTo("#apropos")}>{text.nav.about}</button>
+          <button onClick={() => navTo("#contact")}>{text.nav.contact}</button>
+          <div className="language-switcher" aria-label={text.aria.language}>
+            {languages.map((item) => (
+              <button
+                key={item.code}
+                className={language === item.code ? "active" : ""}
+                type="button"
+                aria-label={item.name}
+                aria-pressed={language === item.code}
+                onClick={() => changeLanguage(item.code)}
+              >
+                {item.label}
+              </button>
+            ))}
+          </div>
         </nav>
         <button
           className="icon-button menu-button"
           type="button"
-          aria-label={menuOpen ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-label={menuOpen ? text.aria.closeMenu : text.aria.openMenu}
           onClick={() => setMenuOpen((isOpen) => !isOpen)}
         >
           {menuOpen ? <X size={18} /> : <Menu size={18} />}
@@ -109,70 +168,64 @@ function App() {
       <main>
         <section className="hero" id="accueil">
           <div className="hero-copy">
-            <p className="eyebrow">Galerie privée d'oeuvres uniques</p>
+            <p className="eyebrow">{text.hero.eyebrow}</p>
             <h1>Maress</h1>
-            <p className="intro">
-              Chaque œuvre naît d’un souvenir, d’une lumière aperçue ailleurs, d’un paysage qui
-              reste dans le cœur longtemps après le retour. À travers ses voyages, l’artiste
-              recueille des fragments de nature, de silence, de couleurs et d’émotions. La faune,
-              la flore, les horizons lointains et les instants suspendus deviennent alors des
-              tableaux uniques, pensés comme des invitations à ressentir plutôt qu’à simplement
-              regarder.
-            </p>
+            <p className="intro">{text.hero.intro}</p>
             <div className="hero-actions">
               <button className="primary-button" onClick={() => navTo("#collection")}>
-                Découvrir la collection <ArrowUpRight size={16} />
+                {text.hero.discover} <ArrowUpRight size={16} />
               </button>
               <button className="quiet-button" onClick={() => requestArtwork(featuredArtwork.name)}>
-                Demande privée <Mail size={15} />
+                {text.hero.privateRequest} <Mail size={15} />
               </button>
             </div>
           </div>
           <button className="hero-artwork" type="button" onClick={() => openArtwork(featuredArtwork)}>
-            <ArtworkVisual artwork={featuredArtwork} variant="hero" />
+            <ArtworkVisual artwork={translatedFeaturedArtwork} labels={text} variant="hero" />
             <span>
-              <b>{featuredArtwork.name}</b>
-              <small>Pièce unique</small>
+              <b>{translatedFeaturedArtwork.name}</b>
+              <small>{text.hero.uniquePiece}</small>
             </span>
           </button>
         </section>
 
         <section className="collection-section" id="collection">
           <div className="section-heading">
-            <p className="eyebrow">Collection confidentielle</p>
-            <h2>Tableaux disponibles uniquement sur demande</h2>
+            <p className="eyebrow">{text.collection.eyebrow}</p>
+            <h2>{text.collection.title}</h2>
           </div>
           <div className="art-grid">
             {artworks.map((artwork) => {
               const isSold = artwork.status === "Vendu";
+              const translatedArtwork = translateArtwork(artwork);
               return (
                 <article className="art-card" key={artwork.id}>
                   <button className="art-image" type="button" onClick={() => openArtwork(artwork)}>
-                    <ArtworkVisual artwork={artwork} />
+                    <ArtworkVisual artwork={translatedArtwork} labels={text} />
                   </button>
                   <div className="art-content">
                     <div className="art-title-row">
-                      <h3>{artwork.name}</h3>
-                      <span className={`status ${statusClass[artwork.status]}`}>{artwork.status}</span>
+                      <h3>{translatedArtwork.name}</h3>
+                      <span className={`status ${statusClass[artwork.status]}`}>{translateStatus(artwork.status)}</span>
                     </div>
-                    <p>{artwork.shortDescription}</p>
+                    <p>{translatedArtwork.shortDescription}</p>
                     <dl>
                       <div>
-                        <dt>Dimensions</dt>
-                        <dd>{artwork.dimensions}</dd>
+                        <dt>{text.collection.dimensions}</dt>
+                        <dd>{translatedArtwork.dimensions}</dd>
                       </div>
                       <div>
-                        <dt>Technique</dt>
-                        <dd>{artwork.technique}</dd>
+                        <dt>{text.collection.technique}</dt>
+                        <dd>{translatedArtwork.technique}</dd>
                       </div>
                       <div>
-                        <dt>Prix</dt>
-                        <dd>{artwork.price}</dd>
+                        <dt>{text.collection.price}</dt>
+                        <dd>{translatedArtwork.price}</dd>
                       </div>
                     </dl>
                     <div className="card-actions">
                       <button className="text-button" type="button" onClick={() => openArtwork(artwork)}>
-                        Voir le détail
+                        {text.collection.detail}
                       </button>
                       <button
                         className="request-button"
@@ -180,7 +233,7 @@ function App() {
                         disabled={isSold}
                         onClick={() => requestArtwork(artwork.name)}
                       >
-                        {isSold ? "Œuvre vendue" : "Demander cette œuvre"}
+                        {isSold ? text.collection.soldButton : text.collection.request}
                       </button>
                     </div>
                   </div>
@@ -195,64 +248,53 @@ function App() {
             <Feather size={28} />
           </div>
           <div>
-            <p className="eyebrow">À propos</p>
-            <h2>Peindre pour prolonger le voyage</h2>
+            <p className="eyebrow">{text.about.eyebrow}</p>
+            <h2>{text.about.title}</h2>
           </div>
-          <p>
-            Ses tableaux sont les traces sensibles de ses voyages. Chaque destination lui offre une
-            couleur, une texture, une lumière ou une émotion qu’elle transforme ensuite en œuvre.
-            Peindre devient pour elle une manière de prolonger le voyage, de garder vivant ce qui
-            l’a émerveillée, puis de le transmettre à quelqu’un d’autre. En demandant une œuvre,
-            vous ne choisissez pas simplement un tableau : vous entrez dans une histoire unique et
-            participez à la suite du chemin.
-          </p>
+          <p>{text.about.text}</p>
         </section>
 
         <section className="contact-section" id="contact">
           <div className="section-heading">
-            <p className="eyebrow">Contact</p>
-            <h2>Faire une demande privée</h2>
-            <p>
-              Pour préserver le caractère intime et unique de chaque pièce, les œuvres Maress ne
-              s’achètent pas en un clic. Chaque demande est reçue personnellement afin d’accompagner
-              l’acquisition avec soin.
-            </p>
+            <p className="eyebrow">{text.contact.eyebrow}</p>
+            <h2>{text.contact.title}</h2>
+            <p>{text.contact.text}</p>
           </div>
           <form className="contact-form" onSubmit={handleContactSubmit}>
             <label>
-              Nom
+              {text.contact.name}
               <input name="name" type="text" autoComplete="name" required />
             </label>
             <label>
-              Email
+              {text.contact.email}
               <input name="email" type="email" autoComplete="email" required />
             </label>
             <label>
-              Œuvre souhaitée
+              {text.contact.artwork}
               <select
                 name="artwork"
                 value={requestedArtwork}
                 onChange={(event) => setRequestedArtwork(event.target.value)}
               >
-                <option value="">Choisir une œuvre</option>
+                <option value="">{text.contact.chooseArtwork}</option>
                 {artworks.map((artwork) => (
                   <option key={artwork.id} value={artwork.name} disabled={artwork.status === "Vendu"}>
                     {artwork.name}
-                    {artwork.status === "Vendu" ? " — vendue" : ""}
+                    {artwork.status === "Vendu" ? ` — ${text.contact.soldOption}` : ""}
                   </option>
                 ))}
               </select>
             </label>
             <label className="full">
-              Message
+              {text.contact.message}
               <textarea
                 name="message"
                 rows="6"
-                placeholder="Bonjour, je souhaiterais recevoir plus d'informations sur cette œuvre..."
+                placeholder={text.contact.placeholder}
               />
             </label>
             <button className="primary-button submit-button" type="submit" disabled={submitStatus === "sending"}>
-              {submitStatus === "sending" ? "Envoi en cours..." : "Envoyer la demande"} <Check size={16} />
+              {submitStatus === "sending" ? text.contact.sending : text.contact.submit} <Check size={16} />
             </button>
             {submitMessage && (
               <p className={`form-message ${submitStatus === "success" ? "success" : "error"}`}>
@@ -265,45 +307,45 @@ function App() {
 
       <footer>
         <span>Maress</span>
-        <span>Galerie privée · Œuvres uniques · Sur demande</span>
+        <span>{text.footer}</span>
       </footer>
 
-      {selectedArtwork && (
+      {selectedArtwork && translatedSelectedArtwork && (
         <div className="modal-backdrop" role="presentation" onClick={() => setSelectedArtwork(null)}>
           <section
             className="art-modal"
             role="dialog"
             aria-modal="true"
-            aria-label={`Détail de l'œuvre ${selectedArtwork.name}`}
+            aria-label={`${text.aria.artworkDetail} ${translatedSelectedArtwork.name}`}
             onClick={(event) => event.stopPropagation()}
           >
             <button
               className="icon-button close-button"
               type="button"
-              aria-label="Fermer"
+              aria-label={text.aria.close}
               onClick={() => setSelectedArtwork(null)}
             >
               <X size={18} />
             </button>
             <div className="modal-visual">
-              <ArtworkVisual artwork={selectedArtwork} variant="modal" />
+              <ArtworkVisual artwork={translatedSelectedArtwork} labels={text} variant="modal" />
             </div>
             <div className="modal-copy">
-              <p className="eyebrow">Pièce unique</p>
-              <h2>{selectedArtwork.name}</h2>
-              <p>{selectedArtwork.detail}</p>
+              <p className="eyebrow">{text.hero.uniquePiece}</p>
+              <h2>{translatedSelectedArtwork.name}</h2>
+              <p>{translatedSelectedArtwork.detail}</p>
               <dl>
                 <div>
-                  <dt>Dimensions</dt>
-                  <dd>{selectedArtwork.dimensions}</dd>
+                  <dt>{text.collection.dimensions}</dt>
+                  <dd>{translatedSelectedArtwork.dimensions}</dd>
                 </div>
                 <div>
-                  <dt>Technique</dt>
-                  <dd>{selectedArtwork.technique}</dd>
+                  <dt>{text.collection.technique}</dt>
+                  <dd>{translatedSelectedArtwork.technique}</dd>
                 </div>
                 <div>
-                  <dt>Statut</dt>
-                  <dd>{selectedArtwork.status}</dd>
+                  <dt>{text.collection.status}</dt>
+                  <dd>{translateStatus(selectedArtwork.status)}</dd>
                 </div>
               </dl>
               <button
@@ -312,7 +354,7 @@ function App() {
                 disabled={selectedArtwork.status === "Vendu"}
                 onClick={() => requestArtwork(selectedArtwork.name)}
               >
-                {selectedArtwork.status === "Vendu" ? "Œuvre vendue" : "Faire une demande privée"}
+                {selectedArtwork.status === "Vendu" ? text.collection.soldButton : text.contact.title}
               </button>
             </div>
           </section>
