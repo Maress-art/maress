@@ -17,6 +17,16 @@ Le site sera disponible sur l'adresse indiquée par Vite, généralement `http:/
 pnpm build
 ```
 
+## Activer le formulaire
+
+Le formulaire utilise Formspree. Créez un formulaire sur Formspree, puis ajoutez son endpoint dans Vercel avec la variable :
+
+```text
+VITE_FORMSPREE_ENDPOINT=https://formspree.io/f/votre-identifiant
+```
+
+Après ajout ou modification de cette variable dans Vercel, relancez un déploiement.
+
 ## Modifier les oeuvres
 
 Les données de collection sont centralisées dans `src/artworks.js`.

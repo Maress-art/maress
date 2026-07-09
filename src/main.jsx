@@ -27,6 +27,9 @@ function App() {
   const [selectedArtwork, setSelectedArtwork] = useState(null);
   const [requestedArtwork, setRequestedArtwork] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState("idle");
+  const [submitMessage, setSubmitMessage] = useState("");
+  const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
 
   const featuredArtwork = useMemo(
     () => artworks.find((artwork) => artwork.status === "Disponible") ?? artworks[0],
@@ -46,6 +49,48 @@ function App() {
   function navTo(section) {
     setMenuOpen(false);
     document.querySelector(section)?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  async function handleContactSubmit(event) {
+    event.preventDefault();
+
+    if (!formEndpoint) {
+      setSubmitStatus("error");
+      setSubmitMessage("Le formulaire doit encore être relié à Formspree avant de pouvoir envoyer une demande.");
+      return;
+    }
+
+    const formData = new FormData(event.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+
+    setSubmitStatus("sending");
+    setSubmitMessage("");
+
+    try {
+      const response = await fetch(formEndpoint, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          ...payload,
+          subject: `Demande privée Maress - ${payload.artwork || "Œuvre non précisée"}`
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error("Form submission failed");
+      }
+
+      event.currentTarget.reset();
+      setRequestedArtwork("");
+      setSubmitStatus("success");
+      setSubmitMessage("Votre demande a bien été envoyée. Une réponse personnelle vous sera adressée prochainement.");
+    } catch {
+      setSubmitStatus("error");
+      setSubmitMessage("L'envoi n'a pas abouti. Merci de réessayer dans un instant.");
+    }
   }
 
   return (
@@ -182,7 +227,7 @@ function App() {
               l’acquisition avec soin.
             </p>
           </div>
-          <form className="contact-form">
+          <form className="contact-form" onSubmit={handleContactSubmit}>
             <label>
               Nom
               <input name="name" type="text" autoComplete="name" required />
@@ -215,9 +260,14 @@ function App() {
                 placeholder="Bonjour, je souhaiterais recevoir plus d'informations sur cette œuvre..."
               />
             </label>
-            <button className="primary-button submit-button" type="submit">
-              Envoyer la demande <Check size={16} />
+            <button className="primary-button submit-button" type="submit" disabled={submitStatus === "sending"}>
+              {submitStatus === "sending" ? "Envoi en cours..." : "Envoyer la demande"} <Check size={16} />
             </button>
+            {submitMessage && (
+              <p className={`form-message ${submitStatus === "success" ? "success" : "error"}`}>
+                {submitMessage}
+              </p>
+            )}
           </form>
         </section>
       </main>

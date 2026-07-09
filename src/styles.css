@@ -504,6 +504,23 @@ textarea:focus {
   grid-column: 1 / -1;
 }
 
+.form-message {
+  grid-column: 1 / -1;
+  margin: 0;
+  border-top: 1px solid var(--line);
+  padding-top: 16px;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.form-message.success {
+  color: var(--sage);
+}
+
+.form-message.error {
+  color: var(--wine);
+}
+
 footer {
   display: flex;
   justify-content: space-between;
