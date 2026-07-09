@@ -61,7 +61,8 @@ function App() {
     }
 
     const formData = new FormData(event.currentTarget);
-    const payload = Object.fromEntries(formData.entries());
+    const artworkName = formData.get("artwork") || "Œuvre non précisée";
+    formData.append("_subject", `Demande privée Maress - ${artworkName}`);
 
     setSubmitStatus("sending");
     setSubmitMessage("");
@@ -70,13 +71,9 @@ function App() {
       const response = await fetch(formEndpoint, {
         method: "POST",
         headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json"
+          Accept: "application/json"
         },
-        body: JSON.stringify({
-          ...payload,
-          subject: `Demande privée Maress - ${payload.artwork || "Œuvre non précisée"}`
-        })
+        body: formData
       });
 
       if (!response.ok) {
