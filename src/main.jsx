@@ -11,6 +11,8 @@ const statusClass = {
   Vendu: "sold"
 };
 
+const collectionFilters = ["all", "Disponible", "Réservé", "Vendu"];
+
 function ArtworkVisual({ artwork, labels, variant = "card" }) {
   if (artwork.image) {
     return <img src={artwork.image} alt={artwork.name} />;
@@ -32,6 +34,7 @@ function App() {
   const [submitStatus, setSubmitStatus] = useState("idle");
   const [submitMessage, setSubmitMessage] = useState("");
   const [heroArtworkIndex, setHeroArtworkIndex] = useState(0);
+  const [collectionFilter, setCollectionFilter] = useState("all");
   const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
   const text = translations[language];
 
@@ -110,6 +113,10 @@ function App() {
     return text.statuses[status] ?? status;
   }
 
+  function getCollectionFilterLabel(filter) {
+    return filter === "all" ? text.collection.all : translateStatus(filter);
+  }
+
   function changeLanguage(nextLanguage) {
     setLanguage(nextLanguage);
     setMenuOpen(false);
@@ -171,6 +178,12 @@ function App() {
   const selectedArtworkIndex = selectedArtwork
     ? artworks.findIndex((artwork) => artwork.id === selectedArtwork.id)
     : -1;
+  const filteredArtworks = collectionFilter === "all"
+    ? artworks
+    : artworks.filter((artwork) => artwork.status === collectionFilter);
+  const collectionCountLabel = filteredArtworks.length > 1
+    ? text.collection.countPlural
+    : text.collection.countSingular;
 
   return (
     <>
@@ -262,18 +275,41 @@ function App() {
         </section>
 
         <section className="collection-section" id="collection">
-          <div className="section-heading">
-            <p className="eyebrow">{text.collection.eyebrow}</p>
-            <h2>{text.collection.title}</h2>
+          <div className="collection-top">
+            <div className="section-heading">
+              <p className="eyebrow">{text.collection.eyebrow}</p>
+              <h2>{text.collection.title}</h2>
+            </div>
+            <div className="collection-tools">
+              <span>
+                {filteredArtworks.length} {collectionCountLabel}
+              </span>
+              <div className="collection-filters" aria-label={text.collection.filtersLabel}>
+                {collectionFilters.map((filter) => (
+                  <button
+                    className={collectionFilter === filter ? "active" : ""}
+                    key={filter}
+                    type="button"
+                    aria-pressed={collectionFilter === filter}
+                    onClick={() => setCollectionFilter(filter)}
+                  >
+                    {getCollectionFilterLabel(filter)}
+                  </button>
+                ))}
+              </div>
+            </div>
           </div>
           <div className="art-grid">
-            {artworks.map((artwork) => {
+            {filteredArtworks.map((artwork, index) => {
               const isSold = artwork.status === "Vendu";
               const translatedArtwork = translateArtwork(artwork);
               return (
-                <article className="art-card" key={artwork.id}>
+                <article className="art-card" key={artwork.id} style={{ "--reveal-delay": `${index * 70}ms` }}>
                   <button className="art-image" type="button" onClick={() => openArtwork(artwork)}>
                     <ArtworkVisual artwork={translatedArtwork} labels={text} />
+                    <span className="art-image-overlay">
+                      {text.collection.detail} <ArrowUpRight size={14} />
+                    </span>
                   </button>
                   <div className="art-content">
                     <div className="art-title-row">
@@ -313,6 +349,7 @@ function App() {
               );
             })}
           </div>
+          {filteredArtworks.length === 0 && <p className="collection-empty">{text.collection.empty}</p>}
         </section>
 
         <section className="about-section" id="apropos">

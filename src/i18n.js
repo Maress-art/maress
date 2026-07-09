@@ -44,7 +44,12 @@ export const translations = {
       detail: "Voir le détail",
       request: "Demander cette œuvre",
       soldButton: "Œuvre vendue",
-      imageComing: "Image à venir"
+      imageComing: "Image à venir",
+      filtersLabel: "Filtrer la collection",
+      all: "Toutes",
+      countSingular: "œuvre",
+      countPlural: "œuvres",
+      empty: "Aucune œuvre ne correspond à ce filtre pour le moment."
     },
     modal: {
       previous: "Œuvre précédente",
@@ -170,7 +175,12 @@ export const translations = {
       detail: "View details",
       request: "Inquire about this work",
       soldButton: "Artwork sold",
-      imageComing: "Image coming soon"
+      imageComing: "Image coming soon",
+      filtersLabel: "Filter the collection",
+      all: "All",
+      countSingular: "work",
+      countPlural: "works",
+      empty: "No work matches this filter for now."
     },
     modal: {
       previous: "Previous artwork",
@@ -296,7 +306,12 @@ export const translations = {
       detail: "Details ansehen",
       request: "Dieses Werk anfragen",
       soldButton: "Werk verkauft",
-      imageComing: "Bild folgt"
+      imageComing: "Bild folgt",
+      filtersLabel: "Kollektion filtern",
+      all: "Alle",
+      countSingular: "Werk",
+      countPlural: "Werke",
+      empty: "Derzeit entspricht kein Werk diesem Filter."
     },
     modal: {
       previous: "Vorheriges Werk",
