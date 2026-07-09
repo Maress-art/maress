@@ -46,6 +46,13 @@ export const translations = {
       soldButton: "Œuvre vendue",
       imageComing: "Image à venir"
     },
+    modal: {
+      previous: "Œuvre précédente",
+      next: "Œuvre suivante",
+      acquisition: "Acquisition privée",
+      story: "Souvenir de l'œuvre",
+      request: "Faire une demande privée"
+    },
     about: {
       eyebrow: "À propos",
       title: "Peindre pour prolonger le voyage",
@@ -165,6 +172,13 @@ export const translations = {
       soldButton: "Artwork sold",
       imageComing: "Image coming soon"
     },
+    modal: {
+      previous: "Previous artwork",
+      next: "Next artwork",
+      acquisition: "Private acquisition",
+      story: "Artwork memory",
+      request: "Make a private inquiry"
+    },
     about: {
       eyebrow: "About",
       title: "Painting to extend the journey",
@@ -283,6 +297,13 @@ export const translations = {
       request: "Dieses Werk anfragen",
       soldButton: "Werk verkauft",
       imageComing: "Bild folgt"
+    },
+    modal: {
+      previous: "Vorheriges Werk",
+      next: "Nächstes Werk",
+      acquisition: "Privater Erwerb",
+      story: "Erinnerung des Werks",
+      request: "Private Anfrage stellen"
     },
     about: {
       eyebrow: "Über",

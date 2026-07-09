@@ -683,25 +683,29 @@ footer span:first-child {
   z-index: 40;
   display: grid;
   place-items: center;
-  padding: 24px;
-  background: rgba(29, 27, 24, 0.42);
-  backdrop-filter: blur(16px);
+  padding: clamp(16px, 3vw, 32px);
+  background: rgba(29, 27, 24, 0.56);
+  backdrop-filter: blur(18px);
   animation: fadeIn 180ms ease both;
 }
 
 .art-modal {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(260px, 0.86fr) minmax(280px, 0.72fr);
-  width: min(1040px, 100%);
-  max-height: min(760px, calc(100vh - 48px));
+  grid-template-columns: minmax(300px, 1.08fr) minmax(320px, 0.72fr);
+  width: min(1180px, 100%);
+  max-height: min(820px, calc(100vh - 48px));
   overflow: auto;
   background: var(--paper);
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 34px 100px rgba(0, 0, 0, 0.32);
 }
 
 .modal-visual {
+  position: relative;
   min-height: 560px;
+  background: #e8dfd0;
+  overflow: hidden;
+  animation: modalImageIn 420ms ease both;
 }
 
 .modal-visual img,
@@ -712,15 +716,98 @@ footer span:first-child {
   object-fit: cover;
 }
 
+.modal-visual-meta {
+  position: absolute;
+  left: 18px;
+  right: 18px;
+  bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--paper);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.38);
+}
+
 .modal-copy {
   display: grid;
   align-content: center;
-  gap: 22px;
-  padding: clamp(28px, 5vw, 62px);
+  gap: 20px;
+  padding: clamp(30px, 5vw, 68px);
 }
 
 .modal-copy h2 {
   font-size: clamp(2.4rem, 5vw, 4.8rem);
+}
+
+.modal-kicker {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.modal-kicker .eyebrow {
+  margin: 0;
+}
+
+.modal-story-label {
+  margin: 0;
+  color: var(--wine);
+  font-size: 0.72rem;
+  font-weight: 650;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.modal-story {
+  margin: 0;
+  color: var(--muted);
+  font-size: clamp(1rem, 1.25vw, 1.12rem);
+}
+
+.modal-specs {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 24px;
+  border-block: 1px solid var(--line);
+  padding-block: 22px;
+}
+
+.modal-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.modal-nav {
+  display: inline-flex;
+  border: 1px solid var(--line);
+}
+
+.modal-nav button {
+  display: inline-grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+  transition: background 180ms ease, color 180ms ease;
+}
+
+.modal-nav button + button {
+  border-left: 1px solid var(--line);
+}
+
+.modal-nav button:hover {
+  background: var(--ink);
+  color: var(--paper);
 }
 
 .close-button {
@@ -743,6 +830,17 @@ footer span:first-child {
   from {
     opacity: 0;
     transform: scale(1.012);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes modalImageIn {
+  from {
+    opacity: 0;
+    transform: scale(1.01);
   }
   to {
     opacity: 1;
@@ -849,6 +947,14 @@ footer span:first-child {
   .modal-visual .art-placeholder {
     min-height: 0;
     max-height: 52vh;
+  }
+
+  .modal-copy {
+    align-content: start;
+  }
+
+  .modal-specs {
+    grid-template-columns: 1fr;
   }
 
   footer {

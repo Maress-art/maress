@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { ArrowUpRight, Check, Feather, Mail, Menu, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Feather, Mail, Menu, X } from "lucide-react";
 import { artworks } from "./artworks";
 import { languages, translations } from "./i18n";
 import "./styles.css";
@@ -57,6 +57,31 @@ function App() {
     return () => window.clearInterval(timer);
   }, [heroArtworks.length]);
 
+  useEffect(() => {
+    if (!selectedArtwork) {
+      return undefined;
+    }
+
+    function handleModalKeys(event) {
+      if (event.key === "Escape") {
+        setSelectedArtwork(null);
+      }
+
+      if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        navigateSelectedArtwork(-1);
+      }
+
+      if (event.key === "ArrowRight") {
+        event.preventDefault();
+        navigateSelectedArtwork(1);
+      }
+    }
+
+    window.addEventListener("keydown", handleModalKeys);
+    return () => window.removeEventListener("keydown", handleModalKeys);
+  }, [selectedArtwork]);
+
   function translateArtwork(artwork) {
     const translatedArtwork = text.artworks[artwork.id] ?? {};
     return {
@@ -100,6 +125,18 @@ function App() {
     setSelectedArtwork(artwork);
   }
 
+  function navigateSelectedArtwork(direction) {
+    setSelectedArtwork((currentArtwork) => {
+      if (!currentArtwork) {
+        return currentArtwork;
+      }
+
+      const currentIndex = artworks.findIndex((artwork) => artwork.id === currentArtwork.id);
+      const nextIndex = (currentIndex + direction + artworks.length) % artworks.length;
+      return artworks[nextIndex];
+    });
+  }
+
   function selectHeroArtwork(index) {
     setHeroArtworkIndex(index);
   }
@@ -131,6 +168,9 @@ function App() {
 
   const translatedFeaturedArtwork = translateArtwork(featuredArtwork);
   const translatedSelectedArtwork = selectedArtwork ? translateArtwork(selectedArtwork) : null;
+  const selectedArtworkIndex = selectedArtwork
+    ? artworks.findIndex((artwork) => artwork.id === selectedArtwork.id)
+    : -1;
 
   return (
     <>
@@ -376,14 +416,26 @@ function App() {
             >
               <X size={18} />
             </button>
-            <div className="modal-visual">
+            <div className="modal-visual" key={selectedArtwork.id}>
               <ArtworkVisual artwork={translatedSelectedArtwork} labels={text} variant="modal" />
+              <div className="modal-visual-meta">
+                <span>
+                  {String(selectedArtworkIndex + 1).padStart(2, "0")} / {String(artworks.length).padStart(2, "0")}
+                </span>
+                <span>{text.hero.uniquePiece}</span>
+              </div>
             </div>
             <div className="modal-copy">
-              <p className="eyebrow">{text.hero.uniquePiece}</p>
+              <div className="modal-kicker">
+                <p className="eyebrow">{text.modal.acquisition}</p>
+                <span className={`status ${statusClass[selectedArtwork.status]}`}>
+                  {translateStatus(selectedArtwork.status)}
+                </span>
+              </div>
               <h2>{translatedSelectedArtwork.name}</h2>
-              <p>{translatedSelectedArtwork.detail}</p>
-              <dl>
+              <p className="modal-story-label">{text.modal.story}</p>
+              <p className="modal-story">{translatedSelectedArtwork.detail}</p>
+              <dl className="modal-specs">
                 <div>
                   <dt>{text.collection.dimensions}</dt>
                   <dd>{translatedSelectedArtwork.dimensions}</dd>
@@ -397,14 +449,24 @@ function App() {
                   <dd>{translateStatus(selectedArtwork.status)}</dd>
                 </div>
               </dl>
-              <button
-                className="primary-button"
-                type="button"
-                disabled={selectedArtwork.status === "Vendu"}
-                onClick={() => requestArtwork(selectedArtwork.name)}
-              >
-                {selectedArtwork.status === "Vendu" ? text.collection.soldButton : text.contact.title}
-              </button>
+              <div className="modal-actions">
+                <button
+                  className="primary-button"
+                  type="button"
+                  disabled={selectedArtwork.status === "Vendu"}
+                  onClick={() => requestArtwork(selectedArtwork.name)}
+                >
+                  {selectedArtwork.status === "Vendu" ? text.collection.soldButton : text.modal.request}
+                </button>
+                <div className="modal-nav">
+                  <button type="button" aria-label={text.modal.previous} onClick={() => navigateSelectedArtwork(-1)}>
+                    <ArrowLeft size={16} />
+                  </button>
+                  <button type="button" aria-label={text.modal.next} onClick={() => navigateSelectedArtwork(1)}>
+                    <ArrowRight size={16} />
+                  </button>
+                </div>
+              </div>
             </div>
           </section>
         </div>
