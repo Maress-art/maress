@@ -46,5 +46,41 @@ export const artworks = [
     status: "Disponible",
     detail:
       "Peinte après une traversée nocturne près d'un lac forestier, l'oeuvre cherche l'instant où la surface de l'eau devient mémoire, miroir et passage."
+  },
+  {
+    id: "nouvelle-escale-i",
+    name: "Nouvelle escale I",
+    image: "",
+    shortDescription: "Une œuvre en attente de son image, déjà pensée comme une trace de voyage.",
+    dimensions: "À préciser",
+    technique: "À préciser",
+    price: "Prix sur demande",
+    status: "Disponible",
+    detail:
+      "Cette pièce sera prochainement complétée avec son souvenir, ses dimensions, sa technique et sa photographie."
+  },
+  {
+    id: "nouvelle-escale-ii",
+    name: "Nouvelle escale II",
+    image: "",
+    shortDescription: "Un fragment sensible à documenter, entre lumière, nature et émotion.",
+    dimensions: "À préciser",
+    technique: "À préciser",
+    price: "Prix sur demande",
+    status: "Disponible",
+    detail:
+      "Cette pièce sera prochainement complétée avec son souvenir, ses dimensions, sa technique et sa photographie."
+  },
+  {
+    id: "nouvelle-escale-iii",
+    name: "Nouvelle escale III",
+    image: "",
+    shortDescription: "Une future invitation au voyage, réservée à une présentation plus intime.",
+    dimensions: "À préciser",
+    technique: "À préciser",
+    price: "Prix sur demande",
+    status: "Disponible",
+    detail:
+      "Cette pièce sera prochainement complétée avec son souvenir, ses dimensions, sa technique et sa photographie."
   }
 ];

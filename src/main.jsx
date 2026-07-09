@@ -10,6 +10,19 @@ const statusClass = {
   Vendu: "sold"
 };
 
+function ArtworkVisual({ artwork, variant = "card" }) {
+  if (artwork.image) {
+    return <img src={artwork.image} alt={artwork.name} />;
+  }
+
+  return (
+    <div className={`art-placeholder ${variant}`} aria-label={`Image à venir pour ${artwork.name}`}>
+      <span>Image à venir</span>
+      <b>{artwork.name}</b>
+    </div>
+  );
+}
+
 function App() {
   const [selectedArtwork, setSelectedArtwork] = useState(null);
   const [requestedArtwork, setRequestedArtwork] = useState("");
@@ -80,7 +93,7 @@ function App() {
             </div>
           </div>
           <button className="hero-artwork" type="button" onClick={() => openArtwork(featuredArtwork)}>
-            <img src={featuredArtwork.image} alt={featuredArtwork.name} />
+            <ArtworkVisual artwork={featuredArtwork} variant="hero" />
             <span>
               <b>{featuredArtwork.name}</b>
               <small>Pièce unique</small>
@@ -99,7 +112,7 @@ function App() {
               return (
                 <article className="art-card" key={artwork.id}>
                   <button className="art-image" type="button" onClick={() => openArtwork(artwork)}>
-                    <img src={artwork.image} alt={artwork.name} />
+                    <ArtworkVisual artwork={artwork} />
                   </button>
                   <div className="art-content">
                     <div className="art-title-row">
@@ -231,7 +244,9 @@ function App() {
             >
               <X size={18} />
             </button>
-            <img src={selectedArtwork.image} alt={selectedArtwork.name} />
+            <div className="modal-visual">
+              <ArtworkVisual artwork={selectedArtwork} variant="modal" />
+            </div>
             <div className="modal-copy">
               <p className="eyebrow">Pièce unique</p>
               <h2>{selectedArtwork.name}</h2>
