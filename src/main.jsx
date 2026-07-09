@@ -93,37 +93,24 @@ function App() {
     document.querySelector(section)?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
-  async function handleContactSubmit(event) {
-    event.preventDefault();
-
+  function handleContactSubmit(event) {
     if (!formEndpoint) {
+      event.preventDefault();
       setSubmitStatus("error");
       setSubmitMessage(text.contact.missingEndpoint);
       return;
     }
 
-    const formData = new FormData(event.currentTarget);
-    const artworkName = formData.get("artwork") || text.contact.unspecifiedArtwork;
-    formData.append("_subject", `${text.contact.subject} - ${artworkName}`);
-
+    const form = event.currentTarget;
     setSubmitStatus("sending");
     setSubmitMessage("");
 
-    try {
-      const response = await fetch(formEndpoint, {
-        method: "POST",
-        mode: "no-cors",
-        body: formData
-      });
-
-      event.currentTarget.reset();
+    window.setTimeout(() => {
+      form.reset();
       setRequestedArtwork("");
       setSubmitStatus("success");
       setSubmitMessage(text.contact.success);
-    } catch {
-      setSubmitStatus("error");
-      setSubmitMessage(text.contact.error);
-    }
+    }, 900);
   }
 
   const translatedFeaturedArtwork = translateArtwork(featuredArtwork);
@@ -260,7 +247,18 @@ function App() {
             <h2>{text.contact.title}</h2>
             <p>{text.contact.text}</p>
           </div>
-          <form className="contact-form" onSubmit={handleContactSubmit}>
+          <form
+            className="contact-form"
+            action={formEndpoint || ""}
+            method="POST"
+            target="formspree-submit"
+            onSubmit={handleContactSubmit}
+          >
+            <input
+              type="hidden"
+              name="_subject"
+              value={`${text.contact.subject} - ${requestedArtwork || text.contact.unspecifiedArtwork}`}
+            />
             <label>
               {text.contact.name}
               <input name="name" type="text" autoComplete="name" required />
@@ -302,6 +300,12 @@ function App() {
               </p>
             )}
           </form>
+          <iframe
+            className="formspree-frame"
+            title="Formspree"
+            name="formspree-submit"
+            aria-hidden="true"
+          />
         </section>
       </main>
 
