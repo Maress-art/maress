@@ -106,6 +106,8 @@ export const translations = {
       subject: "Demande privée Maress"
     },
     footer: "Galerie privée · Œuvres uniques · Sur demande",
+    footerNote:
+      "Chaque acquisition commence par un échange personnel afin de préserver la rareté et l'histoire de chaque pièce.",
     statuses: {
       Disponible: "Disponible",
       Réservé: "Réservé",
@@ -258,6 +260,8 @@ export const translations = {
       subject: "Private Maress inquiry"
     },
     footer: "Private gallery · Unique works · By inquiry",
+    footerNote:
+      "Each acquisition begins with a personal exchange to preserve the rarity and story of every piece.",
     statuses: {
       Disponible: "Available",
       Réservé: "Reserved",
@@ -410,6 +414,8 @@ export const translations = {
       subject: "Private Maress-Anfrage"
     },
     footer: "Private Galerie · Einzigartige Werke · Auf Anfrage",
+    footerNote:
+      "Jeder Erwerb beginnt mit einem persönlichen Austausch, um die Seltenheit und Geschichte jedes Stücks zu bewahren.",
     statuses: {
       Disponible: "Verfügbar",
       Réservé: "Reserviert",

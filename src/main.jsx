@@ -466,9 +466,18 @@ function App() {
         </section>
       </main>
 
-      <footer>
-        <span>Maress</span>
-        <span>{text.footer}</span>
+      <footer className="site-footer">
+        <div>
+          <span>Maress</span>
+          <p>{text.footer}</p>
+        </div>
+        <p>{text.footerNote}</p>
+        <nav aria-label={text.aria.mainNavigation}>
+          <button type="button" onClick={() => navTo("#accueil")}>{text.nav.home}</button>
+          <button type="button" onClick={() => navTo("#collection")}>{text.nav.collection}</button>
+          <button type="button" onClick={() => navTo("#apropos")}>{text.nav.about}</button>
+          <button type="button" onClick={() => navTo("#contact")}>{text.nav.contact}</button>
+        </nav>
       </footer>
 
       {selectedArtwork && translatedSelectedArtwork && (
