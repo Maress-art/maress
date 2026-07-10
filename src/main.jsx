@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Feather, Mail, Menu, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Feather, Globe2, Mail, Menu, X } from "lucide-react";
 import { artworks } from "./artworks";
 import { languages, translations } from "./i18n";
 import "./styles.css";
@@ -12,6 +12,22 @@ const statusClass = {
 };
 
 const collectionFilters = ["all", "Disponible", "Réservé", "Vendu"];
+const languageCodes = languages.map((language) => language.code);
+
+function getInitialLanguage() {
+  if (typeof window === "undefined") {
+    return "fr";
+  }
+
+  const savedLanguage = window.localStorage.getItem("maress-language");
+
+  if (languageCodes.includes(savedLanguage)) {
+    return savedLanguage;
+  }
+
+  const browserLanguage = window.navigator.language?.slice(0, 2);
+  return languageCodes.includes(browserLanguage) ? browserLanguage : "fr";
+}
 
 function ArtworkVisual({ artwork, labels, variant = "card" }) {
   if (artwork.image) {
@@ -27,7 +43,7 @@ function ArtworkVisual({ artwork, labels, variant = "card" }) {
 }
 
 function App() {
-  const [language, setLanguage] = useState("fr");
+  const [language, setLanguage] = useState(getInitialLanguage);
   const [selectedArtwork, setSelectedArtwork] = useState(null);
   const [requestedArtwork, setRequestedArtwork] = useState("");
   const [menuOpen, setMenuOpen] = useState(false);
@@ -44,9 +60,9 @@ function App() {
 
   useEffect(() => {
     document.documentElement.lang = language;
-    document.title = "Maress | Galerie d'art privée";
+    document.title = text.pageTitle;
     document.querySelector('meta[name="description"]')?.setAttribute("content", text.metaDescription);
-  }, [language, text.metaDescription]);
+  }, [language, text.metaDescription, text.pageTitle]);
 
   useEffect(() => {
     if (heroArtworks.length < 2) {
@@ -118,6 +134,7 @@ function App() {
   }
 
   function changeLanguage(nextLanguage) {
+    window.localStorage.setItem("maress-language", nextLanguage);
     setLanguage(nextLanguage);
     setMenuOpen(false);
   }
@@ -198,6 +215,7 @@ function App() {
           <button onClick={() => navTo("#apropos")}>{text.nav.about}</button>
           <button onClick={() => navTo("#contact")}>{text.nav.contact}</button>
           <div className="language-switcher" aria-label={text.aria.language}>
+            <Globe2 size={15} aria-hidden="true" />
             {languages.map((item) => (
               <button
                 key={item.code}

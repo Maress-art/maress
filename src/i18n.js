@@ -6,6 +6,7 @@ export const languages = [
 
 export const translations = {
   fr: {
+    pageTitle: "Maress | Galerie d'art privée",
     metaDescription:
       "Maress, galerie confidentielle d'une artiste peintre. Tableaux uniques disponibles uniquement sur demande privée.",
     nav: {
@@ -157,6 +158,7 @@ export const translations = {
     }
   },
   en: {
+    pageTitle: "Maress | Private Art Gallery",
     metaDescription:
       "Maress, a private gallery for an artist painter. Unique paintings available only through private inquiry.",
     nav: {
@@ -308,6 +310,7 @@ export const translations = {
     }
   },
   de: {
+    pageTitle: "Maress | Private Kunstgalerie",
     metaDescription:
       "Maress, eine private Galerie einer Malerin. Einzigartige Gemälde nur auf private Anfrage erhältlich.",
     nav: {
