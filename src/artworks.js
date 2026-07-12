@@ -1,15 +1,15 @@
 export const artworks = [
   {
     id: "aube-lointaine",
-    name: "Aube lointaine",
+    name: "Là où la lumière demeure",
     image: "/artworks/phare.png",
-    shortDescription: "Une clarté de rivage gardée comme un souffle après le retour.",
+    shortDescription: "Une lumière immobile veille entre l'immensité de la mer et le silence de la nuit.",
     dimensions: "80 x 120 cm",
-    technique: "Acrylique, pigments naturels et glacis sur toile",
+    technique: "Acrylique sur toile",
     price: "Prix sur demande",
     status: "Disponible",
     detail:
-      "Née du souvenir d'un matin silencieux au bord de l'eau, cette pièce retient la première lumière, celle qui effleure les reliefs avant que le monde ne s'éveille tout à fait."
+      "Quand le ciel s'efface lentement, une lumière demeure. Entre l'immensité de la mer et le silence de la nuit, elle veille, immobile, guidant ce qui cherche encore son chemin."
   },
   {
     id: "jardin-apres-la-pluie",

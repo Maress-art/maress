@@ -119,10 +119,10 @@ export const translations = {
     },
     artworks: {
       "aube-lointaine": {
-        shortDescription: "Une clarté de rivage gardée comme un souffle après le retour.",
-        technique: "Acrylique, pigments naturels et glacis sur toile",
+        shortDescription: "Une lumière immobile veille entre l'immensité de la mer et le silence de la nuit.",
+        technique: "Acrylique sur toile",
         detail:
-          "Née du souvenir d'un matin silencieux au bord de l'eau, cette pièce retient la première lumière, celle qui effleure les reliefs avant que le monde ne s'éveille tout à fait."
+          "Quand le ciel s'efface lentement, une lumière demeure. Entre l'immensité de la mer et le silence de la nuit, elle veille, immobile, guidant ce qui cherche encore son chemin."
       },
       "jardin-apres-la-pluie": {
         shortDescription: "La trace végétale d'une vallée encore humide de lumière.",
@@ -273,10 +273,10 @@ export const translations = {
     },
     artworks: {
       "aube-lointaine": {
-        shortDescription: "A shoreline brightness kept like a breath after the return.",
-        technique: "Acrylic, natural pigments and glazes on canvas",
+        shortDescription: "A still light watches between the vastness of the sea and the silence of night.",
+        technique: "Acrylic on canvas",
         detail:
-          "Born from the memory of a silent morning by the water, this piece holds the first light, the one that brushes the reliefs before the world fully wakes."
+          "As the sky slowly fades, a light remains. Between the vastness of the sea and the silence of night, it watches, still, guiding what is still searching for its way."
       },
       "jardin-apres-la-pluie": {
         shortDescription: "The botanical trace of a valley still damp with light.",
@@ -427,10 +427,10 @@ export const translations = {
     },
     artworks: {
       "aube-lointaine": {
-        shortDescription: "Ein Küstenlicht, bewahrt wie ein Atemzug nach der Rückkehr.",
-        technique: "Acryl, natürliche Pigmente und Lasuren auf Leinwand",
+        shortDescription: "Ein unbewegliches Licht wacht zwischen der Weite des Meeres und der Stille der Nacht.",
+        technique: "Acryl auf Leinwand",
         detail:
-          "Aus der Erinnerung an einen stillen Morgen am Wasser geboren, hält dieses Werk das erste Licht fest, das die Konturen streift, bevor die Welt ganz erwacht."
+          "Wenn der Himmel langsam verblasst, bleibt ein Licht bestehen. Zwischen der Weite des Meeres und der Stille der Nacht wacht es unbeweglich und leitet, was noch seinen Weg sucht."
       },
       "jardin-apres-la-pluie": {
         shortDescription: "Die pflanzliche Spur eines Tals, noch feucht von Licht.",
