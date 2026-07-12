@@ -73,14 +73,14 @@ export const artworks = [
   },
   {
     id: "nouvelle-escale-iii",
-    name: "Nouvelle escale III",
+    name: "Sous les fleurs, elle attend",
     image: "/artworks/japon.png",
-    shortDescription: "Une future invitation au voyage, réservée à une présentation plus intime.",
+    shortDescription: "Une présence immobile sous les fleurs, gardée par le silence du ciel.",
     dimensions: "À préciser",
-    technique: "À préciser",
+    technique: "Acrylique sur toile",
     price: "Prix sur demande",
     status: "Disponible",
     detail:
-      "Cette pièce sera prochainement complétée avec son souvenir, ses dimensions, sa technique et sa photographie."
+      "Face au silence du ciel, elle demeure immobile. Sous les fleurs suspendues, le temps s'efface et laisse place à un instant que seule la mémoire saura garder."
   }
 ];

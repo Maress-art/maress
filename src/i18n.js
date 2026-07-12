@@ -155,9 +155,10 @@ export const translations = {
           "Elle avance sans bruit, dessinant son chemin entre les arbres et la lumière. Ici, rien ne presse. La nature suit simplement son cours."
       },
       "nouvelle-escale-iii": {
-        shortDescription: "Une future invitation au voyage, réservée à une présentation plus intime.",
+        shortDescription: "Une présence immobile sous les fleurs, gardée par le silence du ciel.",
+        technique: "Acrylique sur toile",
         detail:
-          "Cette pièce sera prochainement complétée avec son souvenir, ses dimensions, sa technique et sa photographie."
+          "Face au silence du ciel, elle demeure immobile. Sous les fleurs suspendues, le temps s'efface et laisse place à un instant que seule la mémoire saura garder."
       }
     }
   },
@@ -311,9 +312,10 @@ export const translations = {
           "It moves forward without a sound, drawing its path between trees and light. Here, nothing is rushed. Nature simply follows its course."
       },
       "nouvelle-escale-iii": {
-        shortDescription: "A future invitation to travel, reserved for a more intimate presentation.",
+        shortDescription: "A still presence beneath the blossoms, held by the silence of the sky.",
+        technique: "Acrylic on canvas",
         detail:
-          "This piece will soon be completed with its memory, dimensions, technique and photograph."
+          "Facing the silence of the sky, she remains still. Beneath the suspended blossoms, time fades away and leaves room for a moment only memory will know how to keep."
       }
     }
   },
@@ -467,9 +469,10 @@ export const translations = {
           "Es bewegt sich lautlos voran und zeichnet seinen Weg zwischen Bäumen und Licht. Hier drängt nichts. Die Natur folgt einfach ihrem Lauf."
       },
       "nouvelle-escale-iii": {
-        shortDescription: "Eine künftige Einladung zur Reise, reserviert für eine intimere Präsentation.",
+        shortDescription: "Eine stille Präsenz unter den Blüten, bewahrt von der Stille des Himmels.",
+        technique: "Acryl auf Leinwand",
         detail:
-          "Dieses Stück wird bald mit seiner Erinnerung, seinen Maßen, seiner Technik und seiner Fotografie ergänzt."
+          "Der Stille des Himmels zugewandt, bleibt sie unbeweglich. Unter den schwebenden Blüten verblasst die Zeit und macht einem Augenblick Platz, den nur die Erinnerung bewahren kann."
       }
     }
   }
