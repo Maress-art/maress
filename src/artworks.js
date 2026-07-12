@@ -18,8 +18,8 @@ export const artworks = [
     shortDescription: "Un départ porté par le vent, là où l'horizon cesse d'être une limite.",
     dimensions: "70 x 100 cm",
     technique: "Acrylique sur toile",
-    price: "4 800 CHF",
-    status: "Réservé",
+    price: "Prix sur demande",
+    status: "Disponible",
     detail:
       "Il suffit parfois de quitter le rivage. Porté par le vent et guidé par la lumière, le voyage commence là où l'horizon cesse d'être une limite."
   },
@@ -31,7 +31,7 @@ export const artworks = [
     dimensions: "90 x 130 cm",
     technique: "Acrylique sur toile",
     price: "Prix sur demande",
-    status: "Vendu",
+    status: "Disponible",
     detail:
       "Sous les fleurs, le monde semble ralentir. La mer s'étend jusqu'aux îles lointaines, tandis qu'un rivage secret attend ceux qui prennent encore le temps de regarder."
   },
@@ -43,7 +43,7 @@ export const artworks = [
     dimensions: "100 x 140 cm",
     technique: "Acrylique sur toile",
     price: "Prix sur demande",
-    status: "Disponible",
+    status: "Réservé",
     detail:
       "Le soleil descend doucement sur la mer. Deux places attendent encore, face à l'horizon, comme une invitation à oublier le temps et à rester un peu plus longtemps."
   },
