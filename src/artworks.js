@@ -61,15 +61,15 @@ export const artworks = [
   },
   {
     id: "nouvelle-escale-ii",
-    name: "Nouvelle escale II",
+    name: "Le chemin de l'eau",
     image: "/artworks/riviere.png",
-    shortDescription: "Un fragment sensible à documenter, entre lumière, nature et émotion.",
+    shortDescription: "Une eau silencieuse trace sa voie entre les arbres et la lumière.",
     dimensions: "À préciser",
-    technique: "À préciser",
+    technique: "Acrylique sur toile",
     price: "Prix sur demande",
     status: "Disponible",
     detail:
-      "Cette pièce sera prochainement complétée avec son souvenir, ses dimensions, sa technique et sa photographie."
+      "Elle avance sans bruit, dessinant son chemin entre les arbres et la lumière. Ici, rien ne presse. La nature suit simplement son cours."
   },
   {
     id: "nouvelle-escale-iii",

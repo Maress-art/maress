@@ -149,9 +149,10 @@ export const translations = {
           "Au cœur de l'ombre, l'eau trouve son chemin. Entre les feuillages profonds et le murmure de la cascade, la nature révèle un refuge que le monde semble avoir oublié."
       },
       "nouvelle-escale-ii": {
-        shortDescription: "Un fragment sensible à documenter, entre lumière, nature et émotion.",
+        shortDescription: "Une eau silencieuse trace sa voie entre les arbres et la lumière.",
+        technique: "Acrylique sur toile",
         detail:
-          "Cette pièce sera prochainement complétée avec son souvenir, ses dimensions, sa technique et sa photographie."
+          "Elle avance sans bruit, dessinant son chemin entre les arbres et la lumière. Ici, rien ne presse. La nature suit simplement son cours."
       },
       "nouvelle-escale-iii": {
         shortDescription: "Une future invitation au voyage, réservée à une présentation plus intime.",
@@ -304,9 +305,10 @@ export const translations = {
           "In the heart of shadow, water finds its path. Between deep foliage and the murmur of the waterfall, nature reveals a refuge the world seems to have forgotten."
       },
       "nouvelle-escale-ii": {
-        shortDescription: "A sensitive fragment to be documented, between light, nature and emotion.",
+        shortDescription: "Silent water traces its path between trees and light.",
+        technique: "Acrylic on canvas",
         detail:
-          "This piece will soon be completed with its memory, dimensions, technique and photograph."
+          "It moves forward without a sound, drawing its path between trees and light. Here, nothing is rushed. Nature simply follows its course."
       },
       "nouvelle-escale-iii": {
         shortDescription: "A future invitation to travel, reserved for a more intimate presentation.",
@@ -459,9 +461,10 @@ export const translations = {
           "Im Herzen des Schattens findet das Wasser seinen Weg. Zwischen tiefem Blattwerk und dem Murmeln des Wasserfalls offenbart die Natur einen Zufluchtsort, den die Welt vergessen zu haben scheint."
       },
       "nouvelle-escale-ii": {
-        shortDescription: "Ein sensibler Ausschnitt, noch zu dokumentieren, zwischen Licht, Natur und Emotion.",
+        shortDescription: "Stilles Wasser zeichnet seinen Weg zwischen Bäumen und Licht.",
+        technique: "Acryl auf Leinwand",
         detail:
-          "Dieses Stück wird bald mit seiner Erinnerung, seinen Maßen, seiner Technik und seiner Fotografie ergänzt."
+          "Es bewegt sich lautlos voran und zeichnet seinen Weg zwischen Bäumen und Licht. Hier drängt nichts. Die Natur folgt einfach ihrem Lauf."
       },
       "nouvelle-escale-iii": {
         shortDescription: "Eine künftige Einladung zur Reise, reserviert für eine intimere Präsentation.",
