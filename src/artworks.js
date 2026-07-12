@@ -13,15 +13,15 @@ export const artworks = [
   },
   {
     id: "jardin-apres-la-pluie",
-    name: "Jardin après la pluie",
+    name: "Vers l'horizon",
     image: "/artworks/mer.png",
-    shortDescription: "La trace végétale d'une vallée encore humide de lumière.",
+    shortDescription: "Un départ porté par le vent, là où l'horizon cesse d'être une limite.",
     dimensions: "70 x 100 cm",
-    technique: "Technique mixte sur toile de lin",
+    technique: "Acrylique sur toile",
     price: "4 800 CHF",
     status: "Réservé",
     detail:
-      "Inspirée par une marche lente dans une vallée botanique, l'oeuvre rassemble la fraîcheur des feuillages, les ombres lavées par la pluie et l'or discret d'une éclaircie."
+      "Il suffit parfois de quitter le rivage. Porté par le vent et guidé par la lumière, le voyage commence là où l'horizon cesse d'être une limite."
   },
   {
     id: "sable-memoire",

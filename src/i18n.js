@@ -125,10 +125,10 @@ export const translations = {
           "Quand le ciel s'efface lentement, une lumière demeure. Entre l'immensité de la mer et le silence de la nuit, elle veille, immobile, guidant ce qui cherche encore son chemin."
       },
       "jardin-apres-la-pluie": {
-        shortDescription: "La trace végétale d'une vallée encore humide de lumière.",
-        technique: "Technique mixte sur toile de lin",
+        shortDescription: "Un départ porté par le vent, là où l'horizon cesse d'être une limite.",
+        technique: "Acrylique sur toile",
         detail:
-          "Inspirée par une marche lente dans une vallée botanique, l'oeuvre rassemble la fraîcheur des feuillages, les ombres lavées par la pluie et l'or discret d'une éclaircie."
+          "Il suffit parfois de quitter le rivage. Porté par le vent et guidé par la lumière, le voyage commence là où l'horizon cesse d'être une limite."
       },
       "sable-memoire": {
         shortDescription: "Un soir minéral, traversé de cuivre, de vent et de silence.",
@@ -279,10 +279,10 @@ export const translations = {
           "As the sky slowly fades, a light remains. Between the vastness of the sea and the silence of night, it watches, still, guiding what is still searching for its way."
       },
       "jardin-apres-la-pluie": {
-        shortDescription: "The botanical trace of a valley still damp with light.",
-        technique: "Mixed media on linen canvas",
+        shortDescription: "A departure carried by the wind, where the horizon stops being a limit.",
+        technique: "Acrylic on canvas",
         detail:
-          "Inspired by a slow walk through a botanical valley, the work gathers the freshness of foliage, rain-washed shadows and the discreet gold of a clearing."
+          "Sometimes, all it takes is leaving the shore. Carried by the wind and guided by light, the journey begins where the horizon stops being a limit."
       },
       "sable-memoire": {
         shortDescription: "A mineral evening crossed by copper, wind and silence.",
@@ -433,10 +433,10 @@ export const translations = {
           "Wenn der Himmel langsam verblasst, bleibt ein Licht bestehen. Zwischen der Weite des Meeres und der Stille der Nacht wacht es unbeweglich und leitet, was noch seinen Weg sucht."
       },
       "jardin-apres-la-pluie": {
-        shortDescription: "Die pflanzliche Spur eines Tals, noch feucht von Licht.",
-        technique: "Mischtechnik auf Leinenleinwand",
+        shortDescription: "Ein Aufbruch, vom Wind getragen, wo der Horizont keine Grenze mehr ist.",
+        technique: "Acryl auf Leinwand",
         detail:
-          "Inspiriert von einem langsamen Gang durch ein botanisches Tal, sammelt das Werk die Frische des Laubs, vom Regen gewaschene Schatten und das diskrete Gold einer Lichtung."
+          "Manchmal genügt es, das Ufer zu verlassen. Vom Wind getragen und vom Licht geführt, beginnt die Reise dort, wo der Horizont keine Grenze mehr ist."
       },
       "sable-memoire": {
         shortDescription: "Ein mineralischer Abend, durchzogen von Kupfer, Wind und Stille.",
