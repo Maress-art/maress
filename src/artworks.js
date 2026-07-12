@@ -43,7 +43,7 @@ export const artworks = [
     dimensions: "100 x 140 cm",
     technique: "Acrylique sur toile",
     price: "Prix sur demande",
-    status: "Réservé",
+    status: "Disponible",
     detail:
       "Le soleil descend doucement sur la mer. Deux places attendent encore, face à l'horizon, comme une invitation à oublier le temps et à rester un peu plus longtemps."
   },
@@ -55,7 +55,7 @@ export const artworks = [
     dimensions: "À préciser",
     technique: "Acrylique sur toile",
     price: "Prix sur demande",
-    status: "Disponible",
+    status: "Réservé",
     detail:
       "Au cœur de l'ombre, l'eau trouve son chemin. Entre les feuillages profonds et le murmure de la cascade, la nature révèle un refuge que le monde semble avoir oublié."
   },
