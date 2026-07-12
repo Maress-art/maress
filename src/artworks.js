@@ -25,15 +25,15 @@ export const artworks = [
   },
   {
     id: "sable-memoire",
-    name: "Sable mémoire",
+    name: "Le printemps au bout du monde",
     image: "/artworks/barriere.png",
-    shortDescription: "Un soir minéral, traversé de cuivre, de vent et de silence.",
+    shortDescription: "Un rivage secret sous les fleurs, face aux îles lointaines.",
     dimensions: "90 x 130 cm",
-    technique: "Huile, sable fin et encre sur toile",
+    technique: "Acrylique sur toile",
     price: "Prix sur demande",
     status: "Vendu",
     detail:
-      "Cette toile prolonge la sensation d'un désert au crépuscule, quand la chaleur s'apaise et que chaque dune semble conserver une phrase ancienne."
+      "Sous les fleurs, le monde semble ralentir. La mer s'étend jusqu'aux îles lointaines, tandis qu'un rivage secret attend ceux qui prennent encore le temps de regarder."
   },
   {
     id: "lac-sous-la-lune",

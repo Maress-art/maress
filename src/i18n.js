@@ -131,10 +131,10 @@ export const translations = {
           "Il suffit parfois de quitter le rivage. Porté par le vent et guidé par la lumière, le voyage commence là où l'horizon cesse d'être une limite."
       },
       "sable-memoire": {
-        shortDescription: "Un soir minéral, traversé de cuivre, de vent et de silence.",
-        technique: "Huile, sable fin et encre sur toile",
+        shortDescription: "Un rivage secret sous les fleurs, face aux îles lointaines.",
+        technique: "Acrylique sur toile",
         detail:
-          "Cette toile prolonge la sensation d'un désert au crépuscule, quand la chaleur s'apaise et que chaque dune semble conserver une phrase ancienne."
+          "Sous les fleurs, le monde semble ralentir. La mer s'étend jusqu'aux îles lointaines, tandis qu'un rivage secret attend ceux qui prennent encore le temps de regarder."
       },
       "lac-sous-la-lune": {
         shortDescription: "Une nuit profonde où l'eau, les arbres et le ciel se répondent.",
@@ -285,10 +285,10 @@ export const translations = {
           "Sometimes, all it takes is leaving the shore. Carried by the wind and guided by light, the journey begins where the horizon stops being a limit."
       },
       "sable-memoire": {
-        shortDescription: "A mineral evening crossed by copper, wind and silence.",
-        technique: "Oil, fine sand and ink on canvas",
+        shortDescription: "A secret shore beneath the blossoms, facing distant islands.",
+        technique: "Acrylic on canvas",
         detail:
-          "This canvas extends the feeling of a desert at dusk, when the heat softens and each dune seems to hold an ancient sentence."
+          "Beneath the blossoms, the world seems to slow down. The sea stretches toward distant islands, while a secret shore waits for those who still take the time to look."
       },
       "lac-sous-la-lune": {
         shortDescription: "A deep night where water, trees and sky answer one another.",
@@ -439,10 +439,10 @@ export const translations = {
           "Manchmal genügt es, das Ufer zu verlassen. Vom Wind getragen und vom Licht geführt, beginnt die Reise dort, wo der Horizont keine Grenze mehr ist."
       },
       "sable-memoire": {
-        shortDescription: "Ein mineralischer Abend, durchzogen von Kupfer, Wind und Stille.",
-        technique: "Öl, feiner Sand und Tusche auf Leinwand",
+        shortDescription: "Ein verborgenes Ufer unter Blüten, den fernen Inseln zugewandt.",
+        technique: "Acryl auf Leinwand",
         detail:
-          "Diese Leinwand verlängert das Gefühl einer Wüste in der Dämmerung, wenn die Hitze nachlässt und jede Düne einen alten Satz zu bewahren scheint."
+          "Unter den Blüten scheint die Welt langsamer zu werden. Das Meer reicht bis zu den fernen Inseln, während ein verborgenes Ufer auf jene wartet, die sich noch Zeit zum Schauen nehmen."
       },
       "lac-sous-la-lune": {
         shortDescription: "Eine tiefe Nacht, in der Wasser, Bäume und Himmel einander antworten.",
