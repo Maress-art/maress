@@ -143,9 +143,10 @@ export const translations = {
           "Le soleil descend doucement sur la mer. Deux places attendent encore, face à l'horizon, comme une invitation à oublier le temps et à rester un peu plus longtemps."
       },
       "nouvelle-escale-i": {
-        shortDescription: "Une œuvre en attente de son image, déjà pensée comme une trace de voyage.",
+        shortDescription: "Un refuge d'eau et d'ombre, caché au cœur des feuillages profonds.",
+        technique: "Acrylique sur toile",
         detail:
-          "Cette pièce sera prochainement complétée avec son souvenir, ses dimensions, sa technique et sa photographie."
+          "Au cœur de l'ombre, l'eau trouve son chemin. Entre les feuillages profonds et le murmure de la cascade, la nature révèle un refuge que le monde semble avoir oublié."
       },
       "nouvelle-escale-ii": {
         shortDescription: "Un fragment sensible à documenter, entre lumière, nature et émotion.",
@@ -297,9 +298,10 @@ export const translations = {
           "The sun slowly descends over the sea. Two seats are still waiting, facing the horizon, like an invitation to forget time and stay a little longer."
       },
       "nouvelle-escale-i": {
-        shortDescription: "A work awaiting its image, already imagined as a travel trace.",
+        shortDescription: "A refuge of water and shadow, hidden within deep foliage.",
+        technique: "Acrylic on canvas",
         detail:
-          "This piece will soon be completed with its memory, dimensions, technique and photograph."
+          "In the heart of shadow, water finds its path. Between deep foliage and the murmur of the waterfall, nature reveals a refuge the world seems to have forgotten."
       },
       "nouvelle-escale-ii": {
         shortDescription: "A sensitive fragment to be documented, between light, nature and emotion.",
@@ -451,9 +453,10 @@ export const translations = {
           "Die Sonne sinkt langsam über dem Meer. Zwei Plätze warten noch, dem Horizont zugewandt, wie eine Einladung, die Zeit zu vergessen und ein wenig länger zu bleiben."
       },
       "nouvelle-escale-i": {
-        shortDescription: "Ein Werk, das noch auf sein Bild wartet und bereits als Reisespur gedacht ist.",
+        shortDescription: "Ein Zufluchtsort aus Wasser und Schatten, verborgen im tiefen Blattwerk.",
+        technique: "Acryl auf Leinwand",
         detail:
-          "Dieses Stück wird bald mit seiner Erinnerung, seinen Maßen, seiner Technik und seiner Fotografie ergänzt."
+          "Im Herzen des Schattens findet das Wasser seinen Weg. Zwischen tiefem Blattwerk und dem Murmeln des Wasserfalls offenbart die Natur einen Zufluchtsort, den die Welt vergessen zu haben scheint."
       },
       "nouvelle-escale-ii": {
         shortDescription: "Ein sensibler Ausschnitt, noch zu dokumentieren, zwischen Licht, Natur und Emotion.",

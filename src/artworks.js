@@ -49,15 +49,15 @@ export const artworks = [
   },
   {
     id: "nouvelle-escale-i",
-    name: "Nouvelle escale I",
+    name: "Là où la forêt respire",
     image: "/artworks/cascade.png",
-    shortDescription: "Une œuvre en attente de son image, déjà pensée comme une trace de voyage.",
+    shortDescription: "Un refuge d'eau et d'ombre, caché au cœur des feuillages profonds.",
     dimensions: "À préciser",
-    technique: "À préciser",
+    technique: "Acrylique sur toile",
     price: "Prix sur demande",
     status: "Disponible",
     detail:
-      "Cette pièce sera prochainement complétée avec son souvenir, ses dimensions, sa technique et sa photographie."
+      "Au cœur de l'ombre, l'eau trouve son chemin. Entre les feuillages profonds et le murmure de la cascade, la nature révèle un refuge que le monde semble avoir oublié."
   },
   {
     id: "nouvelle-escale-ii",
