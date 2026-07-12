@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
 import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Feather, Globe2, Mail, Menu, X } from "lucide-react";
 import { artworks } from "./artworks";
@@ -51,6 +51,8 @@ function App() {
   const [submitMessage, setSubmitMessage] = useState("");
   const [heroArtworkIndex, setHeroArtworkIndex] = useState(0);
   const [collectionFilter, setCollectionFilter] = useState("all");
+  const heroTouchStart = useRef(null);
+  const heroSwipeTriggered = useRef(false);
   const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
   const text = translations[language];
 
@@ -147,6 +149,56 @@ function App() {
 
   function openArtwork(artwork) {
     setSelectedArtwork(artwork);
+  }
+
+  function handleHeroArtworkClick(artwork) {
+    if (heroSwipeTriggered.current) {
+      heroSwipeTriggered.current = false;
+      return;
+    }
+
+    openArtwork(artwork);
+  }
+
+  function navigateHeroArtwork(direction) {
+    if (heroArtworks.length < 2) {
+      return;
+    }
+
+    setHeroArtworkIndex((currentIndex) => (currentIndex + direction + heroArtworks.length) % heroArtworks.length);
+  }
+
+  function handleHeroTouchStart(event) {
+    const touch = event.touches[0];
+
+    heroSwipeTriggered.current = false;
+    heroTouchStart.current = {
+      x: touch.clientX,
+      y: touch.clientY
+    };
+  }
+
+  function handleHeroTouchMove(event) {
+    if (!heroTouchStart.current) {
+      return;
+    }
+
+    const touch = event.touches[0];
+    const deltaX = touch.clientX - heroTouchStart.current.x;
+    const deltaY = touch.clientY - heroTouchStart.current.y;
+    const isHorizontalSwipe = Math.abs(deltaX) > 56 && Math.abs(deltaX) > Math.abs(deltaY) * 1.25;
+
+    if (!isHorizontalSwipe) {
+      return;
+    }
+
+    heroSwipeTriggered.current = true;
+    heroTouchStart.current = null;
+    navigateHeroArtwork(deltaX < 0 ? 1 : -1);
+  }
+
+  function handleHeroTouchEnd() {
+    heroTouchStart.current = null;
   }
 
   function navigateSelectedArtwork(direction) {
@@ -260,7 +312,15 @@ function App() {
             </div>
           </div>
           <div className="hero-showcase" aria-label={text.hero.carouselLabel}>
-            <button className="hero-artwork" type="button" onClick={() => openArtwork(featuredArtwork)}>
+            <button
+              className="hero-artwork"
+              type="button"
+              onClick={() => handleHeroArtworkClick(featuredArtwork)}
+              onTouchStart={handleHeroTouchStart}
+              onTouchMove={handleHeroTouchMove}
+              onTouchEnd={handleHeroTouchEnd}
+              onTouchCancel={handleHeroTouchEnd}
+            >
               <div className="hero-artwork-frame" key={featuredArtwork.id}>
                 <ArtworkVisual artwork={translatedFeaturedArtwork} labels={text} variant="hero" />
               </div>

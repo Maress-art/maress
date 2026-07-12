@@ -306,6 +306,8 @@ p {
   padding: 0;
   background: transparent;
   cursor: pointer;
+  touch-action: pan-y;
+  user-select: none;
   box-shadow: var(--shadow);
   overflow: hidden;
   transition: transform 260ms ease, box-shadow 260ms ease;
