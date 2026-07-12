@@ -690,14 +690,25 @@ p {
 
 .art-title-row {
   display: grid;
-  gap: 14px;
+  grid-template-rows: minmax(4.5rem, auto) 34px;
+  gap: 12px;
+  align-items: start;
+}
+
+.art-title-row h3 {
+  min-height: 4.5rem;
 }
 
 .status {
+  display: inline-grid;
+  place-items: center;
   justify-self: start;
+  min-width: 116px;
+  min-height: 34px;
   border: 1px solid var(--line);
-  padding: 6px 10px;
+  padding: 0 12px;
   font-size: 0.78rem;
+  text-align: center;
 }
 
 .status.available {
