@@ -2,7 +2,7 @@ export const artworks = [
   {
     id: "aube-lointaine",
     name: "Aube lointaine",
-    image: "/artworks/aube-lointaine.png",
+    image: "/artworks/phare.png",
     shortDescription: "Une clarté de rivage gardée comme un souffle après le retour.",
     dimensions: "80 x 120 cm",
     technique: "Acrylique, pigments naturels et glacis sur toile",
@@ -14,7 +14,7 @@ export const artworks = [
   {
     id: "jardin-apres-la-pluie",
     name: "Jardin après la pluie",
-    image: "/artworks/jardin-apres-la-pluie.png",
+    image: "/artworks/mer.png",
     shortDescription: "La trace végétale d'une vallée encore humide de lumière.",
     dimensions: "70 x 100 cm",
     technique: "Technique mixte sur toile de lin",
@@ -26,7 +26,7 @@ export const artworks = [
   {
     id: "sable-memoire",
     name: "Sable mémoire",
-    image: "/artworks/sable-memoire.png",
+    image: "/artworks/barriere.png",
     shortDescription: "Un soir minéral, traversé de cuivre, de vent et de silence.",
     dimensions: "90 x 130 cm",
     technique: "Huile, sable fin et encre sur toile",
@@ -38,7 +38,7 @@ export const artworks = [
   {
     id: "lac-sous-la-lune",
     name: "Lac sous la lune",
-    image: "/artworks/lac-sous-la-lune.png",
+    image: "/artworks/plage.png",
     shortDescription: "Une nuit profonde où l'eau, les arbres et le ciel se répondent.",
     dimensions: "100 x 140 cm",
     technique: "Acrylique, poudre de marbre et voile nacré sur toile",
@@ -50,7 +50,7 @@ export const artworks = [
   {
     id: "nouvelle-escale-i",
     name: "Nouvelle escale I",
-    image: "",
+    image: "/artworks/cascade.png",
     shortDescription: "Une œuvre en attente de son image, déjà pensée comme une trace de voyage.",
     dimensions: "À préciser",
     technique: "À préciser",
@@ -62,7 +62,7 @@ export const artworks = [
   {
     id: "nouvelle-escale-ii",
     name: "Nouvelle escale II",
-    image: "",
+    image: "/artworks/riviere.png",
     shortDescription: "Un fragment sensible à documenter, entre lumière, nature et émotion.",
     dimensions: "À préciser",
     technique: "À préciser",
@@ -74,7 +74,7 @@ export const artworks = [
   {
     id: "nouvelle-escale-iii",
     name: "Nouvelle escale III",
-    image: "",
+    image: "/artworks/japon.png",
     shortDescription: "Une future invitation au voyage, réservée à une présentation plus intime.",
     dimensions: "À préciser",
     technique: "À préciser",
