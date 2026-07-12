@@ -37,15 +37,15 @@ export const artworks = [
   },
   {
     id: "lac-sous-la-lune",
-    name: "Lac sous la lune",
+    name: "Deux places au soleil",
     image: "/artworks/plage.png",
-    shortDescription: "Une nuit profonde où l'eau, les arbres et le ciel se répondent.",
+    shortDescription: "Deux places face à l'horizon, comme une invitation à suspendre le temps.",
     dimensions: "100 x 140 cm",
-    technique: "Acrylique, poudre de marbre et voile nacré sur toile",
+    technique: "Acrylique sur toile",
     price: "Prix sur demande",
     status: "Disponible",
     detail:
-      "Peinte après une traversée nocturne près d'un lac forestier, l'oeuvre cherche l'instant où la surface de l'eau devient mémoire, miroir et passage."
+      "Le soleil descend doucement sur la mer. Deux places attendent encore, face à l'horizon, comme une invitation à oublier le temps et à rester un peu plus longtemps."
   },
   {
     id: "nouvelle-escale-i",

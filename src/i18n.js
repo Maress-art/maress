@@ -137,10 +137,10 @@ export const translations = {
           "Sous les fleurs, le monde semble ralentir. La mer s'étend jusqu'aux îles lointaines, tandis qu'un rivage secret attend ceux qui prennent encore le temps de regarder."
       },
       "lac-sous-la-lune": {
-        shortDescription: "Une nuit profonde où l'eau, les arbres et le ciel se répondent.",
-        technique: "Acrylique, poudre de marbre et voile nacré sur toile",
+        shortDescription: "Deux places face à l'horizon, comme une invitation à suspendre le temps.",
+        technique: "Acrylique sur toile",
         detail:
-          "Peinte après une traversée nocturne près d'un lac forestier, l'oeuvre cherche l'instant où la surface de l'eau devient mémoire, miroir et passage."
+          "Le soleil descend doucement sur la mer. Deux places attendent encore, face à l'horizon, comme une invitation à oublier le temps et à rester un peu plus longtemps."
       },
       "nouvelle-escale-i": {
         shortDescription: "Une œuvre en attente de son image, déjà pensée comme une trace de voyage.",
@@ -291,10 +291,10 @@ export const translations = {
           "Beneath the blossoms, the world seems to slow down. The sea stretches toward distant islands, while a secret shore waits for those who still take the time to look."
       },
       "lac-sous-la-lune": {
-        shortDescription: "A deep night where water, trees and sky answer one another.",
-        technique: "Acrylic, marble powder and pearlescent veil on canvas",
+        shortDescription: "Two seats facing the horizon, like an invitation to suspend time.",
+        technique: "Acrylic on canvas",
         detail:
-          "Painted after a nocturnal crossing near a forest lake, the work seeks the moment when the water surface becomes memory, mirror and passage."
+          "The sun slowly descends over the sea. Two seats are still waiting, facing the horizon, like an invitation to forget time and stay a little longer."
       },
       "nouvelle-escale-i": {
         shortDescription: "A work awaiting its image, already imagined as a travel trace.",
@@ -445,10 +445,10 @@ export const translations = {
           "Unter den Blüten scheint die Welt langsamer zu werden. Das Meer reicht bis zu den fernen Inseln, während ein verborgenes Ufer auf jene wartet, die sich noch Zeit zum Schauen nehmen."
       },
       "lac-sous-la-lune": {
-        shortDescription: "Eine tiefe Nacht, in der Wasser, Bäume und Himmel einander antworten.",
-        technique: "Acryl, Marmorpulver und perlmuttartiger Schleier auf Leinwand",
+        shortDescription: "Zwei Plätze mit Blick zum Horizont, wie eine Einladung, die Zeit anzuhalten.",
+        technique: "Acryl auf Leinwand",
         detail:
-          "Nach einer nächtlichen Überquerung nahe eines Waldsees gemalt, sucht das Werk den Moment, in dem die Wasseroberfläche Erinnerung, Spiegel und Übergang wird."
+          "Die Sonne sinkt langsam über dem Meer. Zwei Plätze warten noch, dem Horizont zugewandt, wie eine Einladung, die Zeit zu vergessen und ein wenig länger zu bleiben."
       },
       "nouvelle-escale-i": {
         shortDescription: "Ein Werk, das noch auf sein Bild wartet und bereits als Reisespur gedacht ist.",
