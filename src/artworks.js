@@ -82,5 +82,17 @@ export const artworks = [
     status: "Disponible",
     detail:
       "Face au silence du ciel, elle demeure immobile. Sous les fleurs suspendues, le temps s'efface et laisse place à un instant que seule la mémoire saura garder."
+  },
+  {
+    id: "nouvelle-escale-iv",
+    name: "Nouvelle escale IV",
+    image: "",
+    shortDescription: "Une œuvre à venir, prête à rejoindre la collection Maress.",
+    dimensions: "À préciser",
+    technique: "À préciser",
+    price: "Prix sur demande",
+    status: "Disponible",
+    detail:
+      "Cette pièce sera prochainement complétée avec son titre, son souvenir, ses dimensions, sa technique et sa photographie."
   }
 ];

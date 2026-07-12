@@ -159,6 +159,11 @@ export const translations = {
         technique: "Acrylique sur toile",
         detail:
           "Face au silence du ciel, elle demeure immobile. Sous les fleurs suspendues, le temps s'efface et laisse place à un instant que seule la mémoire saura garder."
+      },
+      "nouvelle-escale-iv": {
+        shortDescription: "Une œuvre à venir, prête à rejoindre la collection Maress.",
+        detail:
+          "Cette pièce sera prochainement complétée avec son titre, son souvenir, ses dimensions, sa technique et sa photographie."
       }
     }
   },
@@ -316,6 +321,11 @@ export const translations = {
         technique: "Acrylic on canvas",
         detail:
           "Facing the silence of the sky, she remains still. Beneath the suspended blossoms, time fades away and leaves room for a moment only memory will know how to keep."
+      },
+      "nouvelle-escale-iv": {
+        shortDescription: "A future work, ready to join the Maress collection.",
+        detail:
+          "This piece will soon be completed with its title, memory, dimensions, technique and photograph."
       }
     }
   },
@@ -473,6 +483,11 @@ export const translations = {
         technique: "Acryl auf Leinwand",
         detail:
           "Der Stille des Himmels zugewandt, bleibt sie unbeweglich. Unter den schwebenden Blüten verblasst die Zeit und macht einem Augenblick Platz, den nur die Erinnerung bewahren kann."
+      },
+      "nouvelle-escale-iv": {
+        shortDescription: "Ein kommendes Werk, bereit, Teil der Maress-Kollektion zu werden.",
+        detail:
+          "Dieses Stück wird bald mit seinem Titel, seiner Erinnerung, seinen Maßen, seiner Technik und seiner Fotografie ergänzt."
       }
     }
   }
