@@ -1204,15 +1204,24 @@ textarea:focus {
   }
 
   .hero-artwork-caption {
+    left: 12px;
     right: 12px;
-    bottom: 12px;
+    bottom: 58px;
     min-width: 0;
+    padding: 12px 14px;
+  }
+
+  .hero-artwork-caption b {
+    font-size: clamp(1.2rem, 6vw, 1.65rem);
+    line-height: 1;
+    overflow-wrap: anywhere;
   }
 
   .hero-carousel-meta {
     left: 12px;
+    right: auto;
     bottom: 12px;
-    max-width: calc(100% - 190px);
+    max-width: calc(100% - 24px);
     gap: 8px;
     padding: 8px 10px;
   }
