@@ -1,7 +1,8 @@
 export const languages = [
   { code: "fr", label: "FR", name: "Français" },
   { code: "en", label: "EN", name: "English" },
-  { code: "de", label: "DE", name: "Deutsch" }
+  { code: "de", label: "DE", name: "Deutsch" },
+  { code: "pt", label: "PT", name: "Português" }
 ];
 
 export const translations = {
@@ -488,6 +489,168 @@ export const translations = {
         shortDescription: "Ein kommendes Werk, bereit, Teil der Maress-Kollektion zu werden.",
         detail:
           "Dieses Stück wird bald mit seinem Titel, seiner Erinnerung, seinen Maßen, seiner Technik und seiner Fotografie ergänzt."
+      }
+    }
+  },
+  pt: {
+    pageTitle: "Maress | Galeria de arte privada",
+    metaDescription:
+      "Maress, galeria confidencial de uma artista pintora. Obras únicas disponíveis apenas por pedido privado.",
+    nav: {
+      home: "Início",
+      collection: "Coleção",
+      about: "Sobre",
+      contact: "Contacto"
+    },
+    brandLine: "Galeria de arte privada",
+    aria: {
+      mainNavigation: "Navegação principal",
+      openMenu: "Abrir menu",
+      closeMenu: "Fechar menu",
+      close: "Fechar",
+      language: "Idioma do site",
+      artworkDetail: "Detalhe da obra"
+    },
+    hero: {
+      eyebrow: "Galeria privada de obras únicas",
+      intro:
+        "Cada obra nasce de uma memória, de uma luz vista noutro lugar, de uma paisagem que permanece no coração muito depois do regresso. Através das suas viagens, a artista recolhe fragmentos de natureza, silêncio, cores e emoções. A fauna, a flora, os horizontes distantes e os instantes suspensos tornam-se então quadros únicos, pensados como convites a sentir em vez de apenas olhar.",
+      discover: "Descobrir a coleção",
+      privateRequest: "Pedido privado",
+      uniquePiece: "Peça única",
+      viewArtwork: "Ver esta obra",
+      carouselLabel: "Obra em destaque",
+      chooseSlide: "Mostrar a obra"
+    },
+    journey: {
+      eyebrow: "A viagem por trás das obras",
+      title: "Antes da tela, existe um lugar, uma emoção, uma luz.",
+      text:
+        "Cada criação Maress prolonga uma experiência vivida noutro lugar. A viagem abre o olhar, a emoção escolhe o que ficará, e a pintura transforma esse fragmento íntimo numa peça única.",
+      steps: [
+        {
+          title: "Viajar",
+          text: "Caminhar, observar, recolher paisagens, matérias e presenças que transformam o olhar."
+        },
+        {
+          title: "Sentir",
+          text: "Deixar uma cor, uma luz ou um silêncio encontrar o seu lugar na memória."
+        },
+        {
+          title: "Pintar",
+          text: "Fazer nascer uma obra única, destinada a continuar o seu caminho noutro interior."
+        }
+      ]
+    },
+    collection: {
+      eyebrow: "Coleção confidencial",
+      title: "Quadros disponíveis apenas por pedido",
+      dimensions: "Dimensões",
+      technique: "Técnica",
+      price: "Preço",
+      status: "Estado",
+      detail: "Ver detalhe",
+      request: "Pedir esta obra",
+      soldButton: "Obra vendida",
+      imageComing: "Imagem em breve",
+      filtersLabel: "Filtrar a coleção",
+      all: "Todas",
+      countSingular: "obra",
+      countPlural: "obras",
+      empty: "Nenhuma obra corresponde a este filtro neste momento."
+    },
+    modal: {
+      previous: "Obra anterior",
+      next: "Obra seguinte",
+      acquisition: "Aquisição privada",
+      story: "Memória da obra",
+      request: "Fazer um pedido privado"
+    },
+    about: {
+      eyebrow: "Sobre",
+      title: "Pintar para prolongar a viagem",
+      text:
+        "Os seus quadros são marcas sensíveis das suas viagens. Cada destino oferece-lhe uma cor, uma textura, uma luz ou uma emoção que depois transforma em obra. Pintar torna-se para ela uma forma de prolongar a viagem, de manter vivo aquilo que a maravilhou e de o transmitir a outra pessoa. Ao pedir uma obra, não escolhe apenas um quadro: entra numa história única e participa na continuação do caminho."
+    },
+    contact: {
+      eyebrow: "Contacto",
+      title: "Fazer um pedido privado",
+      text:
+        "Para preservar o caráter íntimo e único de cada peça, as obras Maress não se compram com um clique. Cada pedido é recebido pessoalmente para acompanhar a aquisição com cuidado.",
+      name: "Nome",
+      email: "Email",
+      artwork: "Obra desejada",
+      chooseArtwork: "Escolher uma obra",
+      soldOption: "vendida",
+      message: "Mensagem",
+      placeholder: "Olá, gostaria de receber mais informações sobre esta obra...",
+      submit: "Enviar pedido",
+      sending: "A enviar...",
+      missingEndpoint: "O formulário ainda precisa de ser ligado ao Formspree antes de poder enviar um pedido.",
+      success: "O seu pedido foi enviado. Receberá em breve uma resposta pessoal.",
+      error: "O envio não foi concluído. Por favor, tente novamente dentro de instantes.",
+      unspecifiedArtwork: "Obra não especificada",
+      subject: "Pedido privado Maress"
+    },
+    footer: "Galeria privada · Obras únicas · Por pedido",
+    footerNote:
+      "Cada aquisição começa com uma troca pessoal para preservar a raridade e a história de cada peça.",
+    statuses: {
+      Disponible: "Disponível",
+      Réservé: "Reservada",
+      Vendu: "Vendida"
+    },
+    values: {
+      requestPrice: "Preço sob consulta",
+      toSpecify: "A definir"
+    },
+    artworks: {
+      "aube-lointaine": {
+        shortDescription: "Uma luz imóvel vigia entre a imensidão do mar e o silêncio da noite.",
+        technique: "Acrílico sobre tela",
+        detail:
+          "Quando o céu se apaga lentamente, uma luz permanece. Entre a imensidão do mar e o silêncio da noite, ela vigia, imóvel, guiando aquilo que ainda procura o seu caminho."
+      },
+      "jardin-apres-la-pluie": {
+        shortDescription: "Uma partida levada pelo vento, onde o horizonte deixa de ser limite.",
+        technique: "Acrílico sobre tela",
+        detail:
+          "Às vezes, basta deixar a margem. Levado pelo vento e guiado pela luz, o caminho começa onde o horizonte deixa de ser uma limite."
+      },
+      "sable-memoire": {
+        shortDescription: "Uma margem secreta sob as flores, diante das ilhas distantes.",
+        technique: "Acrílico sobre tela",
+        detail:
+          "Sob as flores, o mundo parece abrandar. O mar estende-se até às ilhas distantes, enquanto uma margem secreta espera por quem ainda sabe tirar tempo para olhar."
+      },
+      "lac-sous-la-lune": {
+        shortDescription: "Dois lugares diante do horizonte, como um convite a suspender o tempo.",
+        technique: "Acrílico sobre tela",
+        detail:
+          "O sol desce lentamente sobre o mar. Dois lugares ainda esperam, diante do horizonte, como um convite a esquecer o tempo e ficar um pouco mais."
+      },
+      "nouvelle-escale-i": {
+        shortDescription: "Um refúgio de água e sombra, escondido no coração da folhagem profunda.",
+        technique: "Acrílico sobre tela",
+        detail:
+          "No coração da sombra, a água encontra o seu caminho. Entre a folhagem profunda e o murmúrio da cascata, a natureza revela um refúgio que o mundo parece ter esquecido."
+      },
+      "nouvelle-escale-ii": {
+        shortDescription: "Uma água silenciosa desenha o seu caminho entre as árvores e a luz.",
+        technique: "Acrílico sobre tela",
+        detail:
+          "Ela avança sem ruído, desenhando o seu caminho entre as árvores e a luz. Aqui, nada tem pressa. A natureza segue simplesmente o seu curso."
+      },
+      "nouvelle-escale-iii": {
+        shortDescription: "Uma presença imóvel sob as flores, guardada pelo silêncio do céu.",
+        technique: "Acrílico sobre tela",
+        detail:
+          "Diante do silêncio do céu, ela permanece imóvel. Sob as flores suspensas, o tempo apaga-se e dá lugar a um instante que só a memória saberá guardar."
+      },
+      "nouvelle-escale-iv": {
+        shortDescription: "Uma obra futura, pronta para se juntar à coleção Maress.",
+        detail:
+          "Esta peça será brevemente completada com o seu título, a sua memória, as suas dimensões, a sua técnica e a sua fotografia."
       }
     }
   }
