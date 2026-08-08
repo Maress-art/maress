@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maress-github.vercel.app/sitemap.xml
+Sitemap: https://maress.ch/sitemap.xml
