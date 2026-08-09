@@ -121,26 +121,26 @@ export const artworks = [
   },
   {
     id: "nouvelle-escale-vii",
-    name: "Nouvelle escale VII",
-    image: "",
-    shortDescription: "Une œuvre à révéler, pensée comme une prochaine invitation.",
+    name: "L'île blanche",
+    image: "/artworks/santorini.png",
+    shortDescription: "Une île lumineuse posée entre le bleu du ciel et celui de la mer.",
     dimensions: "À préciser",
-    technique: "À préciser",
+    technique: "Acrylique sur toile",
     price: "Prix sur demande",
     status: "Disponible",
     detail:
-      "Cette création sera complétée prochainement avec ses informations et sa photographie."
+      "Sous la clarté méditerranéenne, les formes blanches semblent retenir le soleil. Le paysage devient presque un souvenir pur, suspendu entre architecture, mer et horizon."
   },
   {
     id: "nouvelle-escale-viii",
-    name: "Nouvelle escale VIII",
-    image: "",
-    shortDescription: "Une place ouverte pour une toile unique à venir.",
+    name: "Depuis le balcon",
+    image: "/artworks/vue-balcon.png",
+    shortDescription: "Une fenêtre ouverte sur le voyage, entre lumière, mer et distance.",
     dimensions: "À préciser",
-    technique: "À préciser",
+    technique: "Acrylique sur toile",
     price: "Prix sur demande",
     status: "Disponible",
     detail:
-      "Cette œuvre sera ajoutée à la galerie dès que son titre, son histoire et son image seront prêts."
+      "Il y a des lieux que l'on regarde comme on respire. Depuis le balcon, la mer s'étire au loin, et chaque détail semble inviter à rester encore un instant."
   }
 ];

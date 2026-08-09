@@ -180,14 +180,16 @@ export const translations = {
           "Dans la retenue des contrastes, la mer devient presque intérieure. Le paysage s'efface doucement pour ne garder que l'essentiel : le mouvement, l'espace et la trace d'un instant."
       },
       "nouvelle-escale-vii": {
-        shortDescription: "Une œuvre à révéler, pensée comme une prochaine invitation.",
+        shortDescription: "Une île lumineuse posée entre le bleu du ciel et celui de la mer.",
+        technique: "Acrylique sur toile",
         detail:
-          "Cette création sera complétée prochainement avec ses informations et sa photographie."
+          "Sous la clarté méditerranéenne, les formes blanches semblent retenir le soleil. Le paysage devient presque un souvenir pur, suspendu entre architecture, mer et horizon."
       },
       "nouvelle-escale-viii": {
-        shortDescription: "Une place ouverte pour une toile unique à venir.",
+        shortDescription: "Une fenêtre ouverte sur le voyage, entre lumière, mer et distance.",
+        technique: "Acrylique sur toile",
         detail:
-          "Cette œuvre sera ajoutée à la galerie dès que son titre, son histoire et son image seront prêts."
+          "Il y a des lieux que l'on regarde comme on respire. Depuis le balcon, la mer s'étire au loin, et chaque détail semble inviter à rester encore un instant."
       }
     }
   },
@@ -365,14 +367,16 @@ export const translations = {
           "In the restraint of contrasts, the sea becomes almost interior. The landscape softly fades until only the essential remains: movement, space and the trace of a moment."
       },
       "nouvelle-escale-vii": {
-        shortDescription: "A work to be revealed, imagined as a coming invitation.",
+        shortDescription: "A luminous island set between the blue of the sky and the sea.",
+        technique: "Acrylic on canvas",
         detail:
-          "This creation will soon be completed with its information and photograph."
+          "Under Mediterranean clarity, the white forms seem to hold the sun. The landscape becomes almost a pure memory, suspended between architecture, sea and horizon."
       },
       "nouvelle-escale-viii": {
-        shortDescription: "An open place for a unique canvas to come.",
+        shortDescription: "A window open to travel, between light, sea and distance.",
+        technique: "Acrylic on canvas",
         detail:
-          "This work will be added to the gallery as soon as its title, story and image are ready."
+          "Some places are looked at the way one breathes. From the balcony, the sea stretches into the distance, and every detail seems to invite staying a little longer."
       }
     }
   },
@@ -550,14 +554,16 @@ export const translations = {
           "In der Zurückhaltung der Kontraste wird das Meer fast innerlich. Die Landschaft verblasst sanft, bis nur das Wesentliche bleibt: Bewegung, Raum und die Spur eines Augenblicks."
       },
       "nouvelle-escale-vii": {
-        shortDescription: "Ein Werk, das noch enthüllt wird, gedacht als kommende Einladung.",
+        shortDescription: "Eine leuchtende Insel zwischen dem Blau des Himmels und dem des Meeres.",
+        technique: "Acryl auf Leinwand",
         detail:
-          "Diese Kreation wird bald mit ihren Informationen und ihrer Fotografie ergänzt."
+          "Unter mediterraner Klarheit scheinen die weißen Formen die Sonne festzuhalten. Die Landschaft wird fast zu einer reinen Erinnerung, schwebend zwischen Architektur, Meer und Horizont."
       },
       "nouvelle-escale-viii": {
-        shortDescription: "Ein offener Platz für eine kommende einzigartige Leinwand.",
+        shortDescription: "Ein zum Reisen geöffnetes Fenster, zwischen Licht, Meer und Ferne.",
+        technique: "Acryl auf Leinwand",
         detail:
-          "Dieses Werk wird der Galerie hinzugefügt, sobald Titel, Geschichte und Bild bereit sind."
+          "Es gibt Orte, die man betrachtet, als würde man atmen. Vom Balkon aus streckt sich das Meer in die Ferne, und jedes Detail scheint einzuladen, noch einen Augenblick zu bleiben."
       }
     }
   },
@@ -735,14 +741,16 @@ export const translations = {
           "Na contenção dos contrastes, o mar torna-se quase interior. A paisagem apaga-se suavemente para guardar apenas o essencial: o movimento, o espaço e o vestígio de um instante."
       },
       "nouvelle-escale-vii": {
-        shortDescription: "Uma obra a revelar, pensada como um próximo convite.",
+        shortDescription: "Uma ilha luminosa entre o azul do céu e o azul do mar.",
+        technique: "Acrílico sobre tela",
         detail:
-          "Esta criação será brevemente completada com as suas informações e a sua fotografia."
+          "Sob a claridade mediterrânea, as formas brancas parecem guardar o sol. A paisagem torna-se quase uma memória pura, suspensa entre arquitetura, mar e horizonte."
       },
       "nouvelle-escale-viii": {
-        shortDescription: "Um lugar aberto para uma tela única que está por vir.",
+        shortDescription: "Uma janela aberta para a viagem, entre luz, mar e distância.",
+        technique: "Acrílico sobre tela",
         detail:
-          "Esta obra será adicionada à galeria assim que o seu título, a sua história e a sua imagem estiverem prontos."
+          "Há lugares que se olham como se respira. Da varanda, o mar estende-se ao longe, e cada detalhe parece convidar a ficar mais um instante."
       }
     }
   }
