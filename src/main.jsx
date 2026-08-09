@@ -12,6 +12,7 @@ const statusClass = {
 };
 
 const collectionFilters = ["all", "Disponible", "Réservé", "Vendu"];
+const collectionBatchSize = 12;
 const languageCodes = languages.map((language) => language.code);
 
 function getInitialLanguage() {
@@ -52,6 +53,7 @@ function App() {
   const [heroArtworkIndex, setHeroArtworkIndex] = useState(0);
   const [collectionFilter, setCollectionFilter] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
+  const [visibleArtworkCount, setVisibleArtworkCount] = useState(collectionBatchSize);
   const heroTouchStart = useRef(null);
   const heroSwipeTriggered = useRef(false);
   const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
@@ -104,6 +106,10 @@ function App() {
     window.addEventListener("keydown", handleModalKeys);
     return () => window.removeEventListener("keydown", handleModalKeys);
   }, [selectedArtwork]);
+
+  useEffect(() => {
+    setVisibleArtworkCount(collectionBatchSize);
+  }, [collectionFilter, searchQuery]);
 
   function translateArtwork(artwork) {
     const translatedArtwork = text.artworks[artwork.id] ?? {};
@@ -237,6 +243,10 @@ function App() {
     setSearchQuery("");
   }
 
+  function showMoreArtworks() {
+    setVisibleArtworkCount((currentCount) => currentCount + collectionBatchSize);
+  }
+
   function handleSearchKeyDown(event) {
     if (event.key === "Enter") {
       event.preventDefault();
@@ -293,6 +303,8 @@ function App() {
   const filteredArtworks = collectionFilter === "all"
     ? searchedArtworks
     : searchedArtworks.filter((artwork) => artwork.status === collectionFilter);
+  const visibleArtworks = filteredArtworks.slice(0, visibleArtworkCount);
+  const hasMoreArtworks = visibleArtworkCount < filteredArtworks.length;
   const collectionCountLabel = filteredArtworks.length > 1
     ? text.collection.countPlural
     : text.collection.countSingular;
@@ -480,7 +492,7 @@ function App() {
             </div>
           </div>
           <div className="art-grid">
-            {filteredArtworks.map((artwork, index) => {
+            {visibleArtworks.map((artwork, index) => {
               const isSold = artwork.status === "Vendu";
               const translatedArtwork = translateArtwork(artwork);
               return (
@@ -529,6 +541,13 @@ function App() {
               );
             })}
           </div>
+          {hasMoreArtworks && (
+            <div className="load-more-wrap">
+              <button className="load-more-button" type="button" onClick={showMoreArtworks}>
+                {text.collection.showMore}
+              </button>
+            </div>
+          )}
           {filteredArtworks.length === 0 && <p className="collection-empty">{text.collection.empty}</p>}
         </section>
 

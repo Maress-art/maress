@@ -75,6 +75,7 @@ export const translations = {
       all: "Toutes",
       countSingular: "œuvre",
       countPlural: "œuvres",
+      showMore: "Afficher plus",
       empty: "Aucune œuvre ne correspond à ce filtre pour le moment."
     },
     modal: {
@@ -266,6 +267,7 @@ export const translations = {
       all: "All",
       countSingular: "work",
       countPlural: "works",
+      showMore: "Show more",
       empty: "No work matches this filter for now."
     },
     modal: {
@@ -457,6 +459,7 @@ export const translations = {
       all: "Alle",
       countSingular: "Werk",
       countPlural: "Werke",
+      showMore: "Mehr anzeigen",
       empty: "Derzeit entspricht kein Werk diesem Filter."
     },
     modal: {
@@ -648,6 +651,7 @@ export const translations = {
       all: "Todas",
       countSingular: "obra",
       countPlural: "obras",
+      showMore: "Mostrar mais",
       empty: "Nenhuma obra corresponde a este filtro neste momento."
     },
     modal: {
