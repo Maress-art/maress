@@ -94,5 +94,53 @@ export const artworks = [
     status: "Disponible",
     detail:
       "Cette pièce sera prochainement complétée avec son titre, son souvenir, ses dimensions, sa technique et sa photographie."
+  },
+  {
+    id: "nouvelle-escale-v",
+    name: "Nouvelle escale V",
+    image: "",
+    shortDescription: "Une nouvelle pièce attend son image et son histoire.",
+    dimensions: "À préciser",
+    technique: "À préciser",
+    price: "Prix sur demande",
+    status: "Disponible",
+    detail:
+      "Cette œuvre sera prochainement documentée avec son titre, son inspiration, ses dimensions, sa technique et sa photographie."
+  },
+  {
+    id: "nouvelle-escale-vi",
+    name: "Nouvelle escale VI",
+    image: "",
+    shortDescription: "Un futur souvenir de voyage, encore gardé en réserve.",
+    dimensions: "À préciser",
+    technique: "À préciser",
+    price: "Prix sur demande",
+    status: "Disponible",
+    detail:
+      "Cette pièce rejoindra bientôt la collection avec le récit sensible qui l'accompagne."
+  },
+  {
+    id: "nouvelle-escale-vii",
+    name: "Nouvelle escale VII",
+    image: "",
+    shortDescription: "Une œuvre à révéler, pensée comme une prochaine invitation.",
+    dimensions: "À préciser",
+    technique: "À préciser",
+    price: "Prix sur demande",
+    status: "Disponible",
+    detail:
+      "Cette création sera complétée prochainement avec ses informations et sa photographie."
+  },
+  {
+    id: "nouvelle-escale-viii",
+    name: "Nouvelle escale VIII",
+    image: "",
+    shortDescription: "Une place ouverte pour une toile unique à venir.",
+    dimensions: "À préciser",
+    technique: "À préciser",
+    price: "Prix sur demande",
+    status: "Disponible",
+    detail:
+      "Cette œuvre sera ajoutée à la galerie dès que son titre, son histoire et son image seront prêts."
   }
 ];

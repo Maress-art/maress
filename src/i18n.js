@@ -165,6 +165,26 @@ export const translations = {
         shortDescription: "Une œuvre à venir, prête à rejoindre la collection Maress.",
         detail:
           "Cette pièce sera prochainement complétée avec son titre, son souvenir, ses dimensions, sa technique et sa photographie."
+      },
+      "nouvelle-escale-v": {
+        shortDescription: "Une nouvelle pièce attend son image et son histoire.",
+        detail:
+          "Cette œuvre sera prochainement documentée avec son titre, son inspiration, ses dimensions, sa technique et sa photographie."
+      },
+      "nouvelle-escale-vi": {
+        shortDescription: "Un futur souvenir de voyage, encore gardé en réserve.",
+        detail:
+          "Cette pièce rejoindra bientôt la collection avec le récit sensible qui l'accompagne."
+      },
+      "nouvelle-escale-vii": {
+        shortDescription: "Une œuvre à révéler, pensée comme une prochaine invitation.",
+        detail:
+          "Cette création sera complétée prochainement avec ses informations et sa photographie."
+      },
+      "nouvelle-escale-viii": {
+        shortDescription: "Une place ouverte pour une toile unique à venir.",
+        detail:
+          "Cette œuvre sera ajoutée à la galerie dès que son titre, son histoire et son image seront prêts."
       }
     }
   },
@@ -327,6 +347,26 @@ export const translations = {
         shortDescription: "A future work, ready to join the Maress collection.",
         detail:
           "This piece will soon be completed with its title, memory, dimensions, technique and photograph."
+      },
+      "nouvelle-escale-v": {
+        shortDescription: "A new piece awaits its image and story.",
+        detail:
+          "This work will soon be documented with its title, inspiration, dimensions, technique and photograph."
+      },
+      "nouvelle-escale-vi": {
+        shortDescription: "A future travel memory, still held in reserve.",
+        detail:
+          "This piece will soon join the collection with the sensitive story that accompanies it."
+      },
+      "nouvelle-escale-vii": {
+        shortDescription: "A work to be revealed, imagined as a coming invitation.",
+        detail:
+          "This creation will soon be completed with its information and photograph."
+      },
+      "nouvelle-escale-viii": {
+        shortDescription: "An open place for a unique canvas to come.",
+        detail:
+          "This work will be added to the gallery as soon as its title, story and image are ready."
       }
     }
   },
@@ -489,6 +529,26 @@ export const translations = {
         shortDescription: "Ein kommendes Werk, bereit, Teil der Maress-Kollektion zu werden.",
         detail:
           "Dieses Stück wird bald mit seinem Titel, seiner Erinnerung, seinen Maßen, seiner Technik und seiner Fotografie ergänzt."
+      },
+      "nouvelle-escale-v": {
+        shortDescription: "Ein neues Stück wartet auf sein Bild und seine Geschichte.",
+        detail:
+          "Dieses Werk wird bald mit seinem Titel, seiner Inspiration, seinen Maßen, seiner Technik und seiner Fotografie dokumentiert."
+      },
+      "nouvelle-escale-vi": {
+        shortDescription: "Eine künftige Reiseerinnerung, noch in Reserve gehalten.",
+        detail:
+          "Dieses Stück wird bald mit der sensiblen Geschichte, die es begleitet, Teil der Kollektion."
+      },
+      "nouvelle-escale-vii": {
+        shortDescription: "Ein Werk, das noch enthüllt wird, gedacht als kommende Einladung.",
+        detail:
+          "Diese Kreation wird bald mit ihren Informationen und ihrer Fotografie ergänzt."
+      },
+      "nouvelle-escale-viii": {
+        shortDescription: "Ein offener Platz für eine kommende einzigartige Leinwand.",
+        detail:
+          "Dieses Werk wird der Galerie hinzugefügt, sobald Titel, Geschichte und Bild bereit sind."
       }
     }
   },
@@ -651,6 +711,26 @@ export const translations = {
         shortDescription: "Uma obra futura, pronta para se juntar à coleção Maress.",
         detail:
           "Esta peça será brevemente completada com o seu título, a sua memória, as suas dimensões, a sua técnica e a sua fotografia."
+      },
+      "nouvelle-escale-v": {
+        shortDescription: "Uma nova peça aguarda a sua imagem e a sua história.",
+        detail:
+          "Esta obra será brevemente documentada com o seu título, a sua inspiração, as suas dimensões, a sua técnica e a sua fotografia."
+      },
+      "nouvelle-escale-vi": {
+        shortDescription: "Uma futura memória de viagem, ainda guardada em reserva.",
+        detail:
+          "Esta peça juntará em breve à coleção com a história sensível que a acompanha."
+      },
+      "nouvelle-escale-vii": {
+        shortDescription: "Uma obra a revelar, pensada como um próximo convite.",
+        detail:
+          "Esta criação será brevemente completada com as suas informações e a sua fotografia."
+      },
+      "nouvelle-escale-viii": {
+        shortDescription: "Um lugar aberto para uma tela única que está por vir.",
+        detail:
+          "Esta obra será adicionada à galeria assim que o seu título, a sua história e a sua imagem estiverem prontos."
       }
     }
   }
