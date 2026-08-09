@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Feather, Globe2, Mail, Menu, X } from "lucide-react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, Feather, Globe2, Mail, Menu, Search, X } from "lucide-react";
 import { artworks } from "./artworks";
 import { languages, translations } from "./i18n";
 import "./styles.css";
@@ -51,6 +51,7 @@ function App() {
   const [submitMessage, setSubmitMessage] = useState("");
   const [heroArtworkIndex, setHeroArtworkIndex] = useState(0);
   const [collectionFilter, setCollectionFilter] = useState("all");
+  const [searchQuery, setSearchQuery] = useState("");
   const heroTouchStart = useRef(null);
   const heroSwipeTriggered = useRef(false);
   const formEndpoint = import.meta.env.VITE_FORMSPREE_ENDPOINT;
@@ -58,6 +59,7 @@ function App() {
 
   const heroArtworks = artworks.filter((artwork) => artwork.image);
   const featuredArtwork = heroArtworks[heroArtworkIndex] ?? heroArtworks[0];
+  const nextHeroArtwork = heroArtworks[(heroArtworkIndex + 1) % heroArtworks.length] ?? heroArtworks[0];
   const featuredArtworkIsSold = featuredArtwork?.status === "Vendu";
 
   useEffect(() => {
@@ -217,6 +219,31 @@ function App() {
     setHeroArtworkIndex(index);
   }
 
+  function selectNextHeroArtwork() {
+    navigateHeroArtwork(1);
+  }
+
+  function handleSearchChange(event) {
+    const nextQuery = event.target.value;
+    setSearchQuery(nextQuery);
+
+    if (nextQuery.trim()) {
+      setCollectionFilter("all");
+      document.querySelector("#collection")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  function clearSearch() {
+    setSearchQuery("");
+  }
+
+  function handleSearchKeyDown(event) {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      document.querySelector("#collection")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
   function navTo(section) {
     setMenuOpen(false);
     document.querySelector(section)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -243,13 +270,29 @@ function App() {
   }
 
   const translatedFeaturedArtwork = translateArtwork(featuredArtwork);
+  const translatedNextHeroArtwork = translateArtwork(nextHeroArtwork);
   const translatedSelectedArtwork = selectedArtwork ? translateArtwork(selectedArtwork) : null;
   const selectedArtworkIndex = selectedArtwork
     ? artworks.findIndex((artwork) => artwork.id === selectedArtwork.id)
     : -1;
+  const normalizedSearch = searchQuery.trim().toLowerCase();
+  const searchedArtworks = normalizedSearch
+    ? artworks.filter((artwork) => {
+        const translatedArtwork = translateArtwork(artwork);
+        return [
+          translatedArtwork.name,
+          translatedArtwork.shortDescription,
+          translatedArtwork.detail,
+          translatedArtwork.technique,
+          translatedArtwork.dimensions,
+          translatedArtwork.price,
+          translateStatus(artwork.status)
+        ].some((value) => String(value).toLowerCase().includes(normalizedSearch));
+      })
+    : artworks;
   const filteredArtworks = collectionFilter === "all"
-    ? artworks
-    : artworks.filter((artwork) => artwork.status === collectionFilter);
+    ? searchedArtworks
+    : searchedArtworks.filter((artwork) => artwork.status === collectionFilter);
   const collectionCountLabel = filteredArtworks.length > 1
     ? text.collection.countPlural
     : text.collection.countSingular;
@@ -266,6 +309,27 @@ function App() {
           <button onClick={() => navTo("#collection")}>{text.nav.collection}</button>
           <button onClick={() => navTo("#apropos")}>{text.nav.about}</button>
           <button onClick={() => navTo("#contact")}>{text.nav.contact}</button>
+          <label className="site-search">
+            <Search size={15} aria-hidden="true" />
+            <span>{text.collection.search}</span>
+            <input
+              type="search"
+              value={searchQuery}
+              placeholder={text.collection.searchPlaceholder}
+              onChange={handleSearchChange}
+              onKeyDown={handleSearchKeyDown}
+            />
+            {searchQuery && (
+              <button
+                className="search-clear"
+                type="button"
+                aria-label={text.collection.clearSearch}
+                onClick={clearSearch}
+              >
+                <X size={14} />
+              </button>
+            )}
+          </label>
           <div className="language-switcher" aria-label={text.aria.language}>
             <Globe2 size={15} aria-hidden="true" />
             {languages.map((item) => (
@@ -294,10 +358,51 @@ function App() {
 
       <main>
         <section className="hero" id="accueil">
+          <div className="hero-wall">
+            <div className="gallery-wall">
+              <button
+                className="mounted-artwork"
+                type="button"
+                onClick={() => handleHeroArtworkClick(featuredArtwork)}
+                onTouchStart={handleHeroTouchStart}
+                onTouchMove={handleHeroTouchMove}
+                onTouchEnd={handleHeroTouchEnd}
+                onTouchCancel={handleHeroTouchEnd}
+              >
+                <span className="hanging-wire" aria-hidden="true" />
+                <span className="gallery-light" aria-hidden="true" />
+                <span className="mounted-frame" key={featuredArtwork.id}>
+                  <ArtworkVisual artwork={translatedFeaturedArtwork} labels={text} variant="hero" />
+                </span>
+              </button>
+              <button className="next-wall-artwork" type="button" onClick={selectNextHeroArtwork}>
+                <span>{text.hero.nextArtwork}</span>
+                <ArtworkVisual artwork={translatedNextHeroArtwork} labels={text} variant="hero" />
+              </button>
+              <div className="wall-floor" aria-hidden="true" />
+            </div>
+          </div>
           <div className="hero-copy">
-            <p className="eyebrow">{text.hero.eyebrow}</p>
-            <h1>Maress</h1>
-            <p className="intro">{text.hero.intro}</p>
+            <div className="hero-wall-label">
+              <p className="eyebrow">{text.hero.eyebrow}</p>
+              <span className="hero-carousel-count">
+                {String(heroArtworkIndex + 1).padStart(2, "0")} / {String(heroArtworks.length).padStart(2, "0")}
+              </span>
+            </div>
+            <div className="hero-current-card" key={`${featuredArtwork.id}-details`}>
+              <h2>{translatedFeaturedArtwork.name}</h2>
+              <p>{translatedFeaturedArtwork.shortDescription}</p>
+              <dl>
+                <div>
+                  <dt>{text.collection.technique}</dt>
+                  <dd>{translatedFeaturedArtwork.technique}</dd>
+                </div>
+                <div>
+                  <dt>{text.collection.status}</dt>
+                  <dd>{translateStatus(featuredArtwork.status)}</dd>
+                </div>
+              </dl>
+            </div>
             <div className="hero-actions">
               <button className="primary-button" onClick={() => navTo("#collection")}>
                 {text.hero.discover} <ArrowUpRight size={16} />
@@ -310,32 +415,7 @@ function App() {
                 {featuredArtworkIsSold ? text.collection.soldButton : text.hero.privateRequest} <Mail size={15} />
               </button>
             </div>
-          </div>
-          <div className="hero-showcase" aria-label={text.hero.carouselLabel}>
-            <button
-              className="hero-artwork"
-              type="button"
-              onClick={() => handleHeroArtworkClick(featuredArtwork)}
-              onTouchStart={handleHeroTouchStart}
-              onTouchMove={handleHeroTouchMove}
-              onTouchEnd={handleHeroTouchEnd}
-              onTouchCancel={handleHeroTouchEnd}
-            >
-              <div className="hero-artwork-frame" key={featuredArtwork.id}>
-                <ArtworkVisual artwork={translatedFeaturedArtwork} labels={text} variant="hero" />
-              </div>
-              <span className="hero-artwork-caption">
-                <b>{translatedFeaturedArtwork.name}</b>
-                <small>{text.hero.uniquePiece}</small>
-              </span>
-              <span className="hero-view-link">
-                {text.hero.viewArtwork} <ArrowUpRight size={14} />
-              </span>
-            </button>
             <div className="hero-carousel-meta">
-              <span className="hero-carousel-count">
-                {String(heroArtworkIndex + 1).padStart(2, "0")} / {String(heroArtworks.length).padStart(2, "0")}
-              </span>
               <div className="hero-carousel-dots" aria-label={text.hero.carouselLabel}>
                 {heroArtworks.map((artwork, index) => (
                   <button
@@ -379,6 +459,11 @@ function App() {
               <span>
                 {filteredArtworks.length} {collectionCountLabel}
               </span>
+              {normalizedSearch && (
+                <button className="search-chip" type="button" onClick={clearSearch}>
+                  {text.collection.search}: “{searchQuery.trim()}” <X size={13} />
+                </button>
+              )}
               <div className="collection-filters" aria-label={text.collection.filtersLabel}>
                 {collectionFilters.map((filter) => (
                   <button
@@ -566,48 +651,13 @@ function App() {
                 <span>{text.hero.uniquePiece}</span>
               </div>
             </div>
-            <div className="modal-copy">
-              <div className="modal-kicker">
-                <p className="eyebrow">{text.modal.acquisition}</p>
-                <span className={`status ${statusClass[selectedArtwork.status]}`}>
-                  {translateStatus(selectedArtwork.status)}
-                </span>
-              </div>
-              <h2>{translatedSelectedArtwork.name}</h2>
-              <p className="modal-story-label">{text.modal.story}</p>
-              <p className="modal-story">{translatedSelectedArtwork.detail}</p>
-              <dl className="modal-specs">
-                <div>
-                  <dt>{text.collection.dimensions}</dt>
-                  <dd>{translatedSelectedArtwork.dimensions}</dd>
-                </div>
-                <div>
-                  <dt>{text.collection.technique}</dt>
-                  <dd>{translatedSelectedArtwork.technique}</dd>
-                </div>
-                <div>
-                  <dt>{text.collection.status}</dt>
-                  <dd>{translateStatus(selectedArtwork.status)}</dd>
-                </div>
-              </dl>
-              <div className="modal-actions">
-                <button
-                  className="primary-button"
-                  type="button"
-                  disabled={selectedArtwork.status === "Vendu"}
-                  onClick={() => requestArtwork(selectedArtwork.name)}
-                >
-                  {selectedArtwork.status === "Vendu" ? text.collection.soldButton : text.modal.request}
-                </button>
-                <div className="modal-nav">
-                  <button type="button" aria-label={text.modal.previous} onClick={() => navigateSelectedArtwork(-1)}>
-                    <ArrowLeft size={16} />
-                  </button>
-                  <button type="button" aria-label={text.modal.next} onClick={() => navigateSelectedArtwork(1)}>
-                    <ArrowRight size={16} />
-                  </button>
-                </div>
-              </div>
+            <div className="modal-nav">
+              <button type="button" aria-label={text.modal.previous} onClick={() => navigateSelectedArtwork(-1)}>
+                <ArrowLeft size={18} />
+              </button>
+              <button type="button" aria-label={text.modal.next} onClick={() => navigateSelectedArtwork(1)}>
+                <ArrowRight size={18} />
+              </button>
             </div>
           </section>
         </div>
