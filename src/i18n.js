@@ -162,19 +162,22 @@ export const translations = {
           "Face au silence du ciel, elle demeure immobile. Sous les fleurs suspendues, le temps s'efface et laisse place à un instant que seule la mémoire saura garder."
       },
       "nouvelle-escale-iv": {
-        shortDescription: "Une œuvre à venir, prête à rejoindre la collection Maress.",
+        shortDescription: "Une mer en mouvement, saisie dans l'élan d'une lumière vive.",
+        technique: "Acrylique sur toile",
         detail:
-          "Cette pièce sera prochainement complétée avec son titre, son souvenir, ses dimensions, sa technique et sa photographie."
+          "La vague avance comme un souffle puissant, entre éclat, écume et profondeur. Elle porte en elle l'énergie d'un rivage vivant, ce moment où la mer semble appeler plus loin que l'horizon."
       },
       "nouvelle-escale-v": {
-        shortDescription: "Une nouvelle pièce attend son image et son histoire.",
+        shortDescription: "Une nuit traversée de silence, où la lune veille sur l'eau.",
+        technique: "Acrylique sur toile",
         detail:
-          "Cette œuvre sera prochainement documentée avec son titre, son inspiration, ses dimensions, sa technique et sa photographie."
+          "Quand le ciel devient profond, la lumière de la lune transforme le paysage en secret. L'eau, les ombres et l'horizon se rejoignent dans une atmosphère calme, presque suspendue."
       },
       "nouvelle-escale-vi": {
-        shortDescription: "Un futur souvenir de voyage, encore gardé en réserve.",
+        shortDescription: "Une mer dépouillée, gardée comme un souvenir essentiel.",
+        technique: "Acrylique sur toile",
         detail:
-          "Cette pièce rejoindra bientôt la collection avec le récit sensible qui l'accompagne."
+          "Dans la retenue des contrastes, la mer devient presque intérieure. Le paysage s'efface doucement pour ne garder que l'essentiel : le mouvement, l'espace et la trace d'un instant."
       },
       "nouvelle-escale-vii": {
         shortDescription: "Une œuvre à révéler, pensée comme une prochaine invitation.",
@@ -344,19 +347,22 @@ export const translations = {
           "Facing the silence of the sky, she remains still. Beneath the suspended blossoms, time fades away and leaves room for a moment only memory will know how to keep."
       },
       "nouvelle-escale-iv": {
-        shortDescription: "A future work, ready to join the Maress collection.",
+        shortDescription: "A sea in motion, caught in the impulse of vivid light.",
+        technique: "Acrylic on canvas",
         detail:
-          "This piece will soon be completed with its title, memory, dimensions, technique and photograph."
+          "The wave moves forward like a powerful breath, between brightness, foam and depth. It carries the energy of a living shore, that moment when the sea seems to call beyond the horizon."
       },
       "nouvelle-escale-v": {
-        shortDescription: "A new piece awaits its image and story.",
+        shortDescription: "A night crossed by silence, where the moon watches over the water.",
+        technique: "Acrylic on canvas",
         detail:
-          "This work will soon be documented with its title, inspiration, dimensions, technique and photograph."
+          "When the sky grows deep, moonlight turns the landscape into a secret. Water, shadows and horizon meet in a calm, almost suspended atmosphere."
       },
       "nouvelle-escale-vi": {
-        shortDescription: "A future travel memory, still held in reserve.",
+        shortDescription: "A stripped-back sea, kept like an essential memory.",
+        technique: "Acrylic on canvas",
         detail:
-          "This piece will soon join the collection with the sensitive story that accompanies it."
+          "In the restraint of contrasts, the sea becomes almost interior. The landscape softly fades until only the essential remains: movement, space and the trace of a moment."
       },
       "nouvelle-escale-vii": {
         shortDescription: "A work to be revealed, imagined as a coming invitation.",
@@ -526,19 +532,22 @@ export const translations = {
           "Der Stille des Himmels zugewandt, bleibt sie unbeweglich. Unter den schwebenden Blüten verblasst die Zeit und macht einem Augenblick Platz, den nur die Erinnerung bewahren kann."
       },
       "nouvelle-escale-iv": {
-        shortDescription: "Ein kommendes Werk, bereit, Teil der Maress-Kollektion zu werden.",
+        shortDescription: "Ein Meer in Bewegung, eingefangen im Schwung eines lebendigen Lichts.",
+        technique: "Acryl auf Leinwand",
         detail:
-          "Dieses Stück wird bald mit seinem Titel, seiner Erinnerung, seinen Maßen, seiner Technik und seiner Fotografie ergänzt."
+          "Die Welle bewegt sich wie ein kraftvoller Atem, zwischen Glanz, Schaum und Tiefe. Sie trägt die Energie eines lebendigen Ufers in sich, jenen Moment, in dem das Meer über den Horizont hinauszurufen scheint."
       },
       "nouvelle-escale-v": {
-        shortDescription: "Ein neues Stück wartet auf sein Bild und seine Geschichte.",
+        shortDescription: "Eine von Stille durchzogene Nacht, in der der Mond über das Wasser wacht.",
+        technique: "Acryl auf Leinwand",
         detail:
-          "Dieses Werk wird bald mit seinem Titel, seiner Inspiration, seinen Maßen, seiner Technik und seiner Fotografie dokumentiert."
+          "Wenn der Himmel tief wird, verwandelt das Mondlicht die Landschaft in ein Geheimnis. Wasser, Schatten und Horizont finden in einer ruhigen, beinahe schwebenden Atmosphäre zueinander."
       },
       "nouvelle-escale-vi": {
-        shortDescription: "Eine künftige Reiseerinnerung, noch in Reserve gehalten.",
+        shortDescription: "Ein reduziertes Meer, bewahrt wie eine wesentliche Erinnerung.",
+        technique: "Acryl auf Leinwand",
         detail:
-          "Dieses Stück wird bald mit der sensiblen Geschichte, die es begleitet, Teil der Kollektion."
+          "In der Zurückhaltung der Kontraste wird das Meer fast innerlich. Die Landschaft verblasst sanft, bis nur das Wesentliche bleibt: Bewegung, Raum und die Spur eines Augenblicks."
       },
       "nouvelle-escale-vii": {
         shortDescription: "Ein Werk, das noch enthüllt wird, gedacht als kommende Einladung.",
@@ -708,19 +717,22 @@ export const translations = {
           "Diante do silêncio do céu, ela permanece imóvel. Sob as flores suspensas, o tempo apaga-se e dá lugar a um instante que só a memória saberá guardar."
       },
       "nouvelle-escale-iv": {
-        shortDescription: "Uma obra futura, pronta para se juntar à coleção Maress.",
+        shortDescription: "Um mar em movimento, captado no impulso de uma luz viva.",
+        technique: "Acrílico sobre tela",
         detail:
-          "Esta peça será brevemente completada com o seu título, a sua memória, as suas dimensões, a sua técnica e a sua fotografia."
+          "A onda avança como um sopro poderoso, entre brilho, espuma e profundidade. Traz em si a energia de uma margem viva, esse momento em que o mar parece chamar para além do horizonte."
       },
       "nouvelle-escale-v": {
-        shortDescription: "Uma nova peça aguarda a sua imagem e a sua história.",
+        shortDescription: "Uma noite atravessada pelo silêncio, onde a lua vela sobre a água.",
+        technique: "Acrílico sobre tela",
         detail:
-          "Esta obra será brevemente documentada com o seu título, a sua inspiração, as suas dimensões, a sua técnica e a sua fotografia."
+          "Quando o céu se torna profundo, a luz da lua transforma a paisagem em segredo. A água, as sombras e o horizonte encontram-se numa atmosfera calma, quase suspensa."
       },
       "nouvelle-escale-vi": {
-        shortDescription: "Uma futura memória de viagem, ainda guardada em reserva.",
+        shortDescription: "Um mar depurado, guardado como uma memória essencial.",
+        technique: "Acrílico sobre tela",
         detail:
-          "Esta peça juntará em breve à coleção com a história sensível que a acompanha."
+          "Na contenção dos contrastes, o mar torna-se quase interior. A paisagem apaga-se suavemente para guardar apenas o essencial: o movimento, o espaço e o vestígio de um instante."
       },
       "nouvelle-escale-vii": {
         shortDescription: "Uma obra a revelar, pensada como um próximo convite.",

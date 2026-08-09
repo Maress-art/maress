@@ -85,39 +85,39 @@ export const artworks = [
   },
   {
     id: "nouvelle-escale-iv",
-    name: "Nouvelle escale IV",
-    image: "",
-    shortDescription: "Une œuvre à venir, prête à rejoindre la collection Maress.",
+    name: "L'appel de la vague",
+    image: "/artworks/vague.png",
+    shortDescription: "Une mer en mouvement, saisie dans l'élan d'une lumière vive.",
     dimensions: "À préciser",
-    technique: "À préciser",
+    technique: "Acrylique sur toile",
     price: "Prix sur demande",
     status: "Disponible",
     detail:
-      "Cette pièce sera prochainement complétée avec son titre, son souvenir, ses dimensions, sa technique et sa photographie."
+      "La vague avance comme un souffle puissant, entre éclat, écume et profondeur. Elle porte en elle l'énergie d'un rivage vivant, ce moment où la mer semble appeler plus loin que l'horizon."
   },
   {
     id: "nouvelle-escale-v",
-    name: "Nouvelle escale V",
-    image: "",
-    shortDescription: "Une nouvelle pièce attend son image et son histoire.",
+    name: "Sous la lune bleue",
+    image: "/artworks/nuit-lunee.png",
+    shortDescription: "Une nuit traversée de silence, où la lune veille sur l'eau.",
     dimensions: "À préciser",
-    technique: "À préciser",
+    technique: "Acrylique sur toile",
     price: "Prix sur demande",
     status: "Disponible",
     detail:
-      "Cette œuvre sera prochainement documentée avec son titre, son inspiration, ses dimensions, sa technique et sa photographie."
+      "Quand le ciel devient profond, la lumière de la lune transforme le paysage en secret. L'eau, les ombres et l'horizon se rejoignent dans une atmosphère calme, presque suspendue."
   },
   {
     id: "nouvelle-escale-vi",
-    name: "Nouvelle escale VI",
-    image: "",
-    shortDescription: "Un futur souvenir de voyage, encore gardé en réserve.",
+    name: "La mer en mémoire",
+    image: "/artworks/mer-nb.png",
+    shortDescription: "Une mer dépouillée, gardée comme un souvenir essentiel.",
     dimensions: "À préciser",
-    technique: "À préciser",
+    technique: "Acrylique sur toile",
     price: "Prix sur demande",
     status: "Disponible",
     detail:
-      "Cette pièce rejoindra bientôt la collection avec le récit sensible qui l'accompagne."
+      "Dans la retenue des contrastes, la mer devient presque intérieure. Le paysage s'efface doucement pour ne garder que l'essentiel : le mouvement, l'espace et la trace d'un instant."
   },
   {
     id: "nouvelle-escale-vii",
